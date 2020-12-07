@@ -483,7 +483,8 @@ new fullpage('#siteContainer', {
     slidesNavPosition: 'top',
     scrollingSpeed:1200, //700 is default
 
-    licenseKey: '324E8001-25884B3D-A249DB08-5C9EF4E90', //horizontal scrolling
+    licenseKey: '321D1256-FACD479D-8AC17177-3C4D9C4A', //commercial license
+
     // sectionsColor: ['white', '#F5FFFA', '#f1f1ff', 'lightblue', 'white', '#f1f1ff', 'lightblue', 'white', '#f1f1ff', 'lightblue', 'lightgrey', "white"],
 
     v2compatible:false,
@@ -496,10 +497,10 @@ new fullpage('#siteContainer', {
     // i.e. if you push down it doesnt move "forward" it moves literally down and bypasses a bunch of content
     autoScrolling:true, //required for "card by card" fixed view
     scrollHorizontally:true, //allow the user to scroll both horizontally and vertically
-    scrollHorizontallyKey: '324E8001-25884B3D-A249DB08-5C9EF4E90',
+    scrollHorizontallyKey: 'QU5ZX3pqQ2MyTnliMnhzU0c5eWFYcHZiblJoYkd4NUt2Uw==',  //horizontal scrolling
     dragAndMove: 'horizontal',
     parallax: true,
-    parallaxKey: 'C1674176-328A4183-81D3F90E-673DB616',
+    parallaxKey: 'bWpuaWNrZXJzb24uZ2l0aHViLmlvX0FqT2NHRnlZV3hzWVhnPWZPSw==', //parallax single site activation key
     parallaxOptions: {
         type: 'reveal',
         percentage: 62,
