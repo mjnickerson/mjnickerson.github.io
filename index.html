@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CS171 Final Project</title>
+    <meta name="author" content="Barbara Kulaga, Micah Nickerson, Venus Nnadi, Lucy Salwen"/>
+    <meta name="description" content="Charles River Water Quality"/>
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fullpage-examples.css"/>
+    <link rel="stylesheet" type="text/css"  href="css/styles.css">
+
+    <!-- CUSTOM FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="entireSiteContainer">
+
+    <div id="siteContainer">
+
+        <div class="section" id="card1"> <!--Introduction-->
+            <div class="fp-bg"></div>
+            <div class="intro">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div id="card1Title">
+                            <h1 style="color:blue; font-size:160px;">Dive In!</h1>
+                            <h1 style="color:black; font-size:45px;">Exploring The Charles River's Health</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="row justify-content-center">
+                            <img src="img/scrollIcon.png" id="scrollTitleIcon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="card2">
+            <div class="fp-bg"></div>
+            <div class="intro">
+                <div id="card2Title">
+                    <p style='color:black'><b>If you live in Boston or Cambridge, you’re likely familiar with the</b></p>
+                    <h1 style="color:#887873">Charles River</h1>
+                    <!--                        In 1966, The Charles River was so notoriously dirty that it was memorialized by the rock band The Standells in a song called</p>-->
+<!--                    <h1><a href="https://www.youtube.com/watch?v=62XRy-jFCm8" target="_blank" style="text-decoration:none; color:#887873">Dirty Water</a></h1>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="card3">
+            <div class="fp-bg"></div>
+            <div class="intro">
+                <div id="card3Title">
+
+                    <p style='color:black'><b>You may have visited the Charles River’s parks, walked or cycled along its paths, or even kayaked through its waters…
+                    </b></p>
+<!--                        <b>It deserved that reputation</b>, having being used as a deposit for wastewater runoff for homes, mills and factories since colonial times.</p>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="horizontalCards"> <!--River-->
+
+            <div class="slide" id="slide0">
+                <div class="fp-bg" id="slide0background"></div>
+                <div class="row justify-content-center">
+                    <div id="swimQuestionaireTitle">
+                        <div class="slideSpacer50"></div>
+                        <div class="slideSpacer50"></div>
+                        <div class="slideSpacer50"></div>
+                        <div class="slideSpacer50"></div>
+                        <div class="slideSpacer50"></div>
+<!--                        <p style="color:black;">Knowing the history of the river,</p>-->
+                        <h1>But Would You Swim In The Charles River?</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="swimQuestionaireInteractiveContentBox">
+                        <div class="row justify-content-center">
+                            <button id="quiz1ButtonYes" class= "quizButton quizButtonYesImage" onclick="slide1Answer('yes')"></button>
+                            <button id="quiz1ButtonNo"  class= "quizButton quizButtonNoImage" onclick="slide1Answer('no')"></button>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-6">
+                                <div id="questionaire_response"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" id="slide1A">
+                <div class="fp-bg"></div>
+                <div class="row justify-content-center">
+                    <div class="slideTitle">
+                        <div class="slideSpacer50"></div>
+                        <h1>What Does 'Swimmability' Mean?</h1>
+                    </div>
+
+                    <div class="row justify-content-center afterTitleHookText">
+                        <div class="col-10 offset-1">
+                            <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                <p class="subjectDetailText"><b>Swimmability</b> is the measure of whether a body of water is safe to swim in. The river's ecosystem is complex, and many factors impact its health and safety. Scroll to the next slide to learn more about what these are.</p>
+                                <p class="subjectDetailText"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="afterHookTitleCard"></div>
+                    <div id="swimmer-container"></div>
+                </div>
+            </div>
+
+            <div class="slide" id="slide1B">
+                <div class="fp-bg"></div>
+                <div class="row justify-content-center">
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>River Health Factors</h1>
+                        <p style="color:black; font-size:33px;">Let's Explore What Impacts The Charles River's Health.</p>
+                        <p style="color:black; font-size:23px;">Mouse over the diagram below!</p>
+                    </div>
+                </div>
+                <div id="animatedWavesInteractiveDiagramBox"></div>
+                <div id="interactiveDiagram"></div>
+            </div>
+
+
+            <div class="slide" id="slide1C">
+                <div class="fp-bg"></div>
+                <div class= "slideContentContainer"> <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>Part 1: Sewage Contamination</h1> <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustable-->
+                    <div class="row justify-content-center" style="height:50vh">
+                        <div id="partOneTitleCard"></div> <!-- All of the card graphics and text are called in this div-->
+                    </div>
+                </div>
+            </div>
+
+            <!----- BACTERIA LEVELS SLIDE -->
+            <div class="slide" id="slide1"> <!--define the full Page Card-->
+                <div class="fp-bg"></div> <!-- define the full page Background-->
+                <div class= "slideContentContainer"> <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh" id="ecoliwaterqualityTitle">
+                        <h1>How Have E. coli Levels Changed Over Time?</h1> <!-- Main card title-->
+                    </div>
+
+                    <div class="slideSpacer50"></div> <!--unremovable blank space - adjustable-->
+
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="img/icon_ecoli.png" style="height:10vh;">
+                                    </div>
+                                    <div class="col-9">
+                                        <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;">Since the 1980’s, <b style="color: #935116">E. coli</b> levels and fecal coliform levels (another indicator of sewage contamination) have decreased dramatically over time.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;"><b>Explore the average levels E. coli measured for each year since 1989 by hovering over the bar chart, and explore how E. coli levels have changed at specific water testing sites by clicking or brushing over their locations along the river.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 backgroundTransparentWhiteFill">
+                            <div id="ecoliwaterqualitybarchart"></div>
+                            <div class="row justify-content-center">
+                                <div class="col-1">
+                                    <div style="color:black;">Select by:</div>
+                                    <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
+                                        <label class="btn btn-success">
+                                            <input type="radio" name="options" id="option1" autocomplete="off" onclick="ecoliBrushState(true)">Brush River Location
+                                        </label>
+                                        <label class="btn btn-success active">
+                                            <input type="radio" name="options" id="option2" autocomplete="off" onclick="ecoliBrushState(false)" checked>Click Station ID
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-11">
+                                    <div id="ecoliwaterqualitybrushmap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF BACTERIA LEVELS SLIDE -->
+
+
+            <!--- IMPROVEMENTS CAUSE SLIDE -->
+            <div class="slide" id="slide2">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>What Has Caused These Improvements?</h1>
+                        <!-- Main card title-->
+                    </div>
+<!--                    <div class="slideSpacer50"></div>-->
+                    <!--unremovable blank space - adjustible-->
+                    <div id="cso-cloud-container"></div>
+                    <div class="row justify-content-center" style="height: 50vh;">
+                        <div class="col-7 d-flex justify-content-center">
+                            <div id="cfo-stack-chart" class="backgroundTransparentWhiteFill" style="height:50vh"></div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                <img src="img/icon_ecoli.png" style="height:7vh;"><p class="subjectHeading">&nbsp&nbsp&nbsp CSOs &nbsp&nbsp&nbsp<img src="img/icon_ecoli.png" style="height:7vh;">
+<!--                                <p class="subjectHeading">CSOs</p>-->
+                                <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;">Dramatic decreases in <b style="color: #935116">E. coli</b> levels can be attributed to the near elimination of combined sewage overflows (CSOs) into the Charles.</p>
+                                <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;"><b>Explore some of the major infrastructure improvement projects that led to reductions in CSOs entering the Charles River by hovering over the chart.</b></p>
+                                <button type="button" class="btn btn-info button" data-toggle="collapse" data-target="#demo2" onclick="moveBalloonOutOfBox()">Find out more about CSOs</button>
+                                <p id="demo2" class="subjectDetailText collapse" style="margin: 20px 0px 0px 20px; font-size: 16px;">
+                                    CSOs occur when combined sewer systems, which collect both domestic sewage and rainwater runoff, exceed their capacity. Instead of transporting the wastewater to a treatment plant, the untreated mix gets discharged directly into nearby bodies of water.</br></br>
+                                Though this practice was previously commonplace in Boston and Cambridge, a 1984 ruling under the Clean Water Act mandated a program to protect Boston Harbor from sewer system pollution. CSO reduction efforts began shortly after.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF IMPROVEMENTS CAUSE SLIDE -->
+
+
+            <!--- WATER QUALITY IMPACTS SLIDE -->
+            <div class="slide" id="slide3">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>What Impacts Water Quality Today?</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustible-->
+
+                    <div class="row" style="height:60vh">
+                        <div class="col-10 offset-1">
+
+                            <!--contents-->
+                            <div class="row" style="height:50vh">
+                                <!-- text description -->
+                                <div class="col-4">
+                                    <div class="row" style="height:8%"></div>
+                                    <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                        <img src="img/icon_rainfall.png" style="height:7vh;"><p class="subjectHeading">&nbsp&nbsp&nbsp Precipitation &nbsp&nbsp&nbsp</p><img src="img/icon_rainfall.png" style="height:7vh;">
+                                        <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;"></br>E. coli levels fluctuate rapidly in the Charles River, and much of this variation is caused by <b style="color: #7370e5">large rain events</b>. Stormwater run-off can wash bacteria into the river, and on occasion large rain events still trigger combined sewer overflows, which discharge untreated sewage into the Charles.</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;">During the summer of 2018, Northeastern Ph.D. Candidate Max Rome sampled the Charles River at North Point Park in Cambridge for E. coli (almost) every day. <b>Using this interactive chart, explore the days that surpassed state regulations for swimming (which pertain to both daily and 5-day average measures) and how they coincide with rain and wet weather days.</b></p>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <!--drop-downs-->
+                                    <div class="row align-items-start justify-content-center" style="height:8%">
+                                        <form class="form-inline form-line">
+                                            <div class="form-group">
+                                                <label for="measure-selector">E. coli measures: </label>
+                                                <select class="form-control" id="measure-selector" >
+                                                    <option value="eColi">daily measures</option>
+                                                    <option value="eColiFiveDayAvg">5 day average</option>
+                                                </select>
+                                                <label for="rainfall-shower">Rainfall: </label>
+                                                <select class="form-control" id="rainfall-shower" >
+                                                    <option>don't show</option>
+                                                    <option value="rainfall">daily rainfall</option>
+                                                    <option value="wet">wet days</option>
+                                                </select>
+                                                <label for="cut-off-selector">Swimming Standard: </label>
+                                                <select class="form-control" id="cut-off-selector" >
+                                                    <option value="no">don't show</option>
+                                                    <option value="yes">show</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--visualization-->
+                                    <div class="row" style="height: 92%">
+                                        <div id="ecoliRainChart" class="backgroundTransparentWhiteFill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF WATER QUALITY IMPACTS SLIDE -->
+
+
+            <!-- SWIMMABILITY SLIDE -->
+            <div class="slide" id="slide4">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>What Does That Mean For Swimmability?</h1>
+                        <!-- Main card title-->
+                    </div>
+<!--                    <div class="slideSpacer50"></div>-->
+                    <!--unremovable blank space - adjustible-->
+                    <div class="row" style="height:50vh">
+                        <div class="col d-flex justify-content-center">
+                            <div id="swimmability-panel" class="text-left backgroundTransparentWhiteFill">
+                                <h3>2018</h3>
+                                <div id="swimmability-chart">
+                                    <div id="swimmability-blurb-panel">
+                                        <div id="swimmability-blurb">
+                                            <div id="swimmability-blurb-01">
+                                                <p class="subjectDetailText" style="margin-top: 32px;">In 2018, the EPA reported that the Charles River met swimming standards 53% of the time. However, Max’s daily testing at North Point Park shares a more optimistic picture for swimming. Part of this is due to the fact that E. coli levels tend to be lower during the summer, when most people would want to swim in the river. Additionally, some areas of the river tend to have lower bacterial counts than others.</p>
+                                                <p class="subjectDetailText"><a href="javascript:updateSwimmabilityVis(true);">Click here to see what Max’s testing shows</a></p>
+                                            </div>
+                                            <div id="swimmability-blurb-02" style="display: none;">
+                                                <p class="subjectDetailText"><a href="javascript:updateSwimmabilityVis(false);">&laquo; reset</a></p>
+                                                <p class="subjectDetailText">Thankfully, E-coli levels are low in the summer months, and the river is swimmable most summer days!</p>
+                                            </div>
+                                        </div>
+                                        <div id="swimmable-legend">
+                                            <div class="swimmable-legend-row">
+                                                <div class="swimmable-legend-cell swimmable"></div>
+                                                <div class="swimmable-legend-label">Suitable for swimming</div>
+                                            </div>
+                                            <div class="swimmable-legend-row">
+                                                <div class="swimmable-legend-cell not-swimmable"></div>
+                                                <div class="swimmable-legend-label">Unswimmable due to E. coli levels</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SWIMMABILIY SLIDE-->
+
+
+            <!--- CYANOBACTERIA BLOOMS SLIDE -->
+            <div class="slide" id="slide5">
+                <div class="fp-bg"></div>
+                <div class= "slideContentContainer"> <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>Part 2: Cyanobacteria</h1> <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustable-->
+                    <div class="row justify-content-center" style="height:50vh">
+                        <div id="partTwoTitleCard"></div> <!-- All of the card graphics and text are called in this div-->
+                    </div>
+                </div>
+            </div>
+
+            <!--- CYANOBACTERIA ENTRY FACTORS SLIDE -->
+            <div class="slide" id="slide5A">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>Cyanobacteria Blooms Limit Swimmability</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="col-10 offset-1">
+                        <div class="row justify-content-center">
+                            <!-- descriptive text -->
+                            <div class="col-4">
+                                <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="img/icon_cyanobacteria.png" style="height:8vh;">
+                                        </div>
+                                        <div class="col-9">
+                                            <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;"><b>Every summer, <b style="color: #45B39D">cyanobacteria blooms</b> exceed levels safe for recreational water activity.</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;">The Charles River Watershed Association measures the river water weekly during peak bloom season, and if cyanobacteria levels exceed state guidelines, the Massachusetts Department of Public Health (MDPH) recommends that public advisories be posted for the duration of the bloom. <br><br> The MDPH has posted 11 advisories restricting recreational water use for an average of <b>48 days each year</b> since 2009. Since then, the Lower Basin of the Charles River has had cyanobacteria blooms that have lasted from <b>2-13 weeks every summer</b>, resulting in dangerous swimming conditions for extended periods of time. <br><br> <b>Hover over the bar chart to see how often excessive cyanobacteria levels have made the Charles River unsafe to swim in during summer months. </b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- visualization -->
+                            <div class="col-8 justify-content-center">
+                                <!-- visualization div -->
+                                <div class="row backgroundTransparentWhiteFill">
+                                    <div id="cyanoAdvisoriesChart">
+                                        <svg />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF ENVIRONMENTAL FACTORS SLIDE -->
+
+            <!--- ENVIRONMENTAL FACTORS SLIDE -->
+            <div class="slide" id="slide6">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>When Do Blooms Occur?</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="col-10 offset-1">
+                        <div class="row justify-content-center" style="height: 50vh">
+                            <!-- descriptive text -->
+                            <div class="col-4">
+                                <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                    <div>
+                                        <img src="img/icon_temperature.png" style="height:9vh;"><p class="subjectHeading">&nbsp&nbsp&nbsp Hot Summer Days &nbsp&nbsp&nbsp</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 20px 0px; font-size: 16px;"><b style="color: #45B39D">Cyanobacteria</b> grow best in water temperatures above 25°C, or 77°F. This means that cyanobacteria levels are highest during the hot summer months, which unfortunately overlaps with the swimming season in Massachusetts.</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 5px 0px; font-size: 15px;">Cyanobacteria blooms can be measured by two indicators:</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 0px 0px; font-size: 14px;"><b>Chlorophyl A:</b> a chemical that cyanobacteria produces</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 10px 0px; font-size: 14px;"><b>Phaeophytin:</b> a chemical released when cyanobacteria die</p>
+                                        <p class="subjectDetailText" style="margin: 0px 0px 10px 0px; font-size: 15px;">These nutrients have been measured quarterly for several years and tend to be highest when water temperature is also high. <b>Click below to see the correlation between these cyanobacteria indicators and water temperature.</b></p>
+                                        <!-- button -->
+                                        <button type="button" class="btn button" id="scatterPlotTransition">Click Here</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- visualization -->
+                            <div class="col-8 justify-content-center">
+                                <!-- visualization div -->
+                                <div class="row" style="height: 95%">
+                                    <div id="cyanoScatterChart" class="backgroundTransparentWhiteFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF ENVIRONMENTAL FACTORS SLIDE -->
+
+            <!--- CONTROL BLOOMS SLIDE -->
+            <div class="slide" id="slide7">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>How Can We Control Blooms?</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustible-->
+                    <div class="row justify-content-center" style="height:5vh>
+                        <div class="col-5">
+                    <div id="chlorophyll-final-blurb">Unfortunately, cyanobacteria growth hasn’t decreased as a result of phosphorus reduction efforts. </br> We need to try a different approach!</div>
+                        </div>
+                    <div class="row justify-content-center" style="height: 50vh">
+                        <div class="col-5">
+                            <div id="phosphorus-chart" class="blooms-transition1 backgroundTransparentWhiteFill"></div>
+                        </div>
+                        <div class="col-5">
+                            <div id="chlorophyll-chart" class="blooms-transition2 backgroundTransparentWhiteFill"></div>
+                            <div id="chlorophyll-quiz" class="row justify-content-center backgroundTransparentWhiteFill">
+                                <img src="img/icon_phosphorus.png" style="height:9vh;" title="Phosphorus">
+                                <p class="subjectDetailText" style="margin-top: 20px;">Since cyanobacteria blooms rely on the presence of excess nutrients like <b style="color: #CB4335">phosphorus</b>, efforts to control blooms have consisted of limiting nutrient runoff from entering the river. Thanks to the work of Massachusetts DEP and the EPA, average yearly phosphorus levels have decreased steadily over the past couple decades.</p>
+                                <p class="subjectDetailText" style="margin-top: 20px;"><b>How do you think summer mean Chlorophyl A levels (an indicator of cyanobacteria growth) changed during this time period as a result of decreases in phosphorous levels?</b></p>
+                                <div class="row" style="width: 90%; margin-top: 20px;">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-success" onclick="javascript:submitChlorophyllQuiz(this, false);">A: Levels Increased</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-success" onclick="javascript:submitChlorophyllQuiz(this, false);">B: Levels Decreased</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-success" onclick="javascript:submitChlorophyllQuiz(this, true);">C: No Trend</button>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!--- END OF CONTROL BLOOMS SLIDE -->
+
+            <!--- WETLAND MAP SLIDE -->
+            <div class="slide" id="slide8">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>What If We Took An Ecological Approach?</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustible-->
+                    <div class="col-12">
+                        <div class="row justify-content-center" style="height:100%">
+                            <div class="col-8">
+                                <div class="row justify-content-center">
+                                    <div id="charlesRiverInteractiveMapContainer"></div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row justify-content-center">
+                                    <div id="wetlandContentContainer" class="backgroundTransparentWhiteFill">
+                                        <img src="img/icon_wetlands.png" style="height:14vh;">
+                                        <p class="subjectHeading" id="wetlandMapTitle">Wetlands of Past & Present</p>
+                                        <p class="subjectDetailText" id="wetlandMapText" style="font-size: 16px">Since decreasing levels of nutrient pollution have not always translated into reductions in cyanobacteria, researcher Max Rome and the Charles River Conservancy are exploring how the river's ecology and history could play a role in developing alternative approaches.
+                                            </br></br>The Charles River today looks much different than it did in the past, and that could be part of the problem. Before European colonization, the Charles River was a tidal estuary, surrounded by <b style="color:#196F3D">wetland marshes</b> that supported diverse plant and aquatic life. During the 19th century, the wetlands were drained and in many places the natural river's edge was replaced with concrete walls. <b>Explore the diagram to the left to learn what the geography of the river looked like!</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center" style="height:50%">
+                            <img src="img/floating-wetland.jpg" height="100px" style="margin-top: 50px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END OF WETLAND MAP SLIDE -->
+
+            <!--- MORE DETAIL ABOUT FLOATING WETLAND -->
+            <div class="slide" id="slide9">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>The Floating Wetland</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustible-->
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                        <p class="subjectHeading">How could a floating wetland help?</p>
+                                        <p class="subjectDetailText" style="font-size: 16px">
+                                            <br>Though the overgrowth of cyanobacteria can be attributed to excess nutrients like phosphorus, it can also be understood as the result of a broken food chain. Zooplankton are tiny aquatic organisms that eat cyanobacteria. If populations of zooplankton were more robust, we might see fewer cyanobacteria blooms in the summer.
+                                            <br>
+                                            <br>In partnership with the Charles River Conservancy, Northeastern University Ph.D. Candidate Max Rome has installed a <b style="color:#196F3D">floating wetland</b> into the Charles River, just downriver of the Longfellow Bridge near the mouth of the Broad Canal. The hope is that introducing this new habitat will shield cyanobacteria-eating zooplankton from its predators, small fish. Since much of the river’s natural bank has been replaced by the construction of walls, the floating wetland’s root system will provide crucial new refuge for zooplankton and could help restore balance to the river's broken food chain.
+<!--                                            An ecological approach is being taken to address the threat of cyanobacteria blooms — <b style="color:#196F3D">floating wetlands</b>. Researchers are testing the hypothesis that installing a floating wetland in the Charles River will help control harmful cyanobacteria blooms by shielding cyanobacteria-eating zooplankton from its predators, small fish, essentially restoring a broken food chain. Since much of the river’s natural bank has been replaced by the construction of walls, leaving zooplankton vulnerable, the hope is that the floating wetland’s root system will act as a new habitat and provide refuge for zooplankton.-->
+<!--                                            <br>-->
+<!--                                            <br>-->
+<!--                                            A floating wetland has been installed downriver of the Longfellow Bridge, along Cambridge Parkway and near the mouth of the Broad Canal. Data is currently being collected as part of a multi-year study on the effectiveness of this approach, and it will be used to guide future efforts to improve the cleanliness of the Charles River.-->
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                        <div class="fling-minislide backgroundNoFillWithMargin" >
+                                            <img src="img/floating-wetland-6.jpg" alt="Slide 8"/>
+                                            <img src="img/floating-wetland-2.jpg" alt="Slide 7"/>
+                                            <img src="img/floating-wetland-7.jpg" alt="Slide 6"/>
+                                            <img src="img/floating-wetland-5.jpg" alt="Slide 5"/>
+                                            <img src="img/floating-wetland-4.png" alt="Slide 4"/>
+                                            <img src="img/floating-wetland-3.jpg" alt="Slide 3"/>
+                                            <img src="img/floatingwetlandDiagrambySasaki.jpg" alt="Slide 2"/>
+                                            <img src="img/floating-wetland.jpg" alt="Slide 1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- END DETAIL ABOUT FLOATING WETLAND -->
+
+            <!--- RIVER HEALTH SIMULATION -->
+            <div class="slide" id="slide10">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the full page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>Floating Wetlands In Action</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <div class="slideSpacer50"></div>
+                    <!-- container for the full size simulation-->
+                    <div id="riverhealth-cloud-container"></div>
+                    <div id="fullSimulationVisibilityWrapper">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <div class="row justify-content-center">
+                                    <div class="emptySpacer"></div>
+                                </div>
+                            </div>
+                            <div class="col-5 backgroundTransparentWhiteFill" id="river-health-top-panel">
+                                <div class="row justify-content-center padTop " id="river-health-panel-nutrients">
+                                    <div class="col-1">
+                                        <img src="img/icon_phosphorus.png" style="height:100px; width:100px;" title="Phosphorus Nutrients in Runoff">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 justify-content-center">
+                                        <div class="btn-group btn-group-toggle healthSimButtonGroup" data-toggle="buttons">
+                                            <label class="btn btn-danger active">
+                                                <input type="radio" name="options" class="river-health-button-nutrients" id="noNutrients" autocomplete="off" onclick="updateRiverHealthNutrients(false)" checked>No Nutrient Runoff
+                                            </label>
+                                            <label class="btn btn-danger">
+                                                <input type="radio" name="options" class="river-health-button-nutrients" id="hasNutrients" autocomplete="off" onclick="updateRiverHealthNutrients(true)">Add Nutrient Runoff
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center padTop" id="river-health-panel-temp">
+                                    <div class="col-1">
+                                        <img src="img/icon_temperature.png" style="height:100px; width:60px;" title="Daily Temperature">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 justify-content-center">
+                                        <div class="btn-group btn-group-toggle healthSimButtonGroup" data-toggle="buttons">
+                                            <label class="btn btn-warning active">
+                                                <input type="radio" name="options" class="river-health-button-habitat" id="lowTemp" autocomplete="off" onclick="updateRiverHealthTemp(0)" checked>Low Temperature
+                                            </label>
+                                            <label class="btn btn-warning">
+                                                <input type="radio" name="options" class="river-health-button-habitat" id="medTemp" autocomplete="off" onclick="updateRiverHealthTemp(1)">Medium Temperature
+                                            </label>
+                                            <label class="btn btn-warning">
+                                                <input type="radio" name="options" class="river-health-button-habitat" id="highTemp" autocomplete="off" onclick="updateRiverHealthTemp(2)">High Temperature
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center padTop" id="river-health-panel-habitat">
+                                    <div class="col-1">
+                                        <img src="img/icon_wetlands.png" style="height:100px; width:100px;" title="Restore Wetland Habitat">
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 justify-content-center">
+                                        <div class="btn-group btn-group-toggle healthSimButtonGroup" data-toggle="buttons">
+                                            <label class="btn btn-success active">
+                                                <input type="radio" name="options" class="river-health-button-habitat" id="noWetland" autocomplete="off" onclick="updateRiverHealthHabitat(false)" checked>No Floating Wetland
+                                            </label>
+                                            <label class="btn btn-success">
+                                                <input type="radio" name="options" class="river-health-button-habitat" id="hasWetland" autocomplete="off" onclick="updateRiverHealthHabitat(true)">Add Floating Wetland
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="row justify-content-center">
+                                            <div class="emptySpacer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="row justify-content-center backgroundTransparentWhiteFill">
+                                    <div id="river-health-description" class="river-health-description"></div>
+                                    <button id="healthSimNextButton" class="btn btn-danger" onclick="riverHealthSim.wrangleData()">Continue...</button>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="row justify-content-center">
+                                    <div class="emptySpacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="river-health-chart"></div>
+                        </div>
+                        <div id="fish1-container"></div>
+                       <!-- <div id="fish2-container"></div> -->
+                    </div>
+                </div>
+            </div>
+            <!--- END OF RIVER HEALTH SIMULATION SLIDE -->
+
+            <!--- AHA MOMENT SLIDE -->
+            <div class="slide" id="slide11">
+                <!--define the full Page Card-->
+                <div class="fp-bg"></div>
+                <!-- define the fulla page Background-->
+                <div class="slideContentContainer">
+                    <!-- all the content thats on the card-->
+                    <div class="slideTitle slideTitleHigh">
+                        <h1>What Can You Do?</h1>
+                        <!-- Main card title-->
+                    </div>
+                    <div class="slideSpacer50"></div>
+                    <!--unremovable blank space - adjustible-->
+                    <div class="row" style="height:50vh">
+                        <div class="col-1"></div>
+                        <div class="col-10 backgroundTransparentWhiteFill">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <p class="subjectDetailText"><b>If you would like to help make the Charles River swimmable again, there are a few steps you can take!</b></p>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <h1>1.</h1>
+                                    <p class="subjectHeading">Minimize your CO2 footprint.</p>
+                                    <p class="subjectDetailText">Climate change will bring more frequent and intense storms that trigger bacterial and nutrient pollution, as well as higher temperatures that encourage cyanobacteria blooms. Efforts to minimize climate change will positively impact of the river's health.</p>
+                                </div>
+                                <div class="col-4">
+                                    <h1>2.</h1>
+                                    <p class="subjectHeading">Visit and learn about the Floating Wetland.</p>
+                                    <p class="subjectDetailText" style="margin-top: 10px">When more people understand the ecology of the Charles River, more people can be effective advocates for the river's health. Explore online <b><u><a href="https://thecharles.org/floating-wetlands/resources/" target="_blank">educational resources</a></u></b> about the wetland and get <b><u><a href="https://goo.gl/maps/PSJLUAbFrWS3rJQg8" target="_blank">directions</a></u></b> to its Cambridge location.</p>
+                                </div>
+                                <div class="col-4">
+                                    <h1>3.</h1>
+                                    <p class="subjectHeading">Donate to the Charles River Conservancy.</p>
+                                    <p class="subjectDetailText" style="margin-top: 10px">The Charles River Conservancy depends of the financial support of dedicated community members to enable innovative ecological projects like the floating wetland. <b><u><a href="https://thecharles.org/theriverbank/" target="_blank">Donate today!</a></u></b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div id="ahaAnimationsContainer"></div>
+                </div>
+            </div>
+            <!--- END OF AHA MOMENT SLIDE -->
+
+        </div> <!-- END OF HORIZONTAL CARD SECTION-->
+
+        <!--- SOURCES AND CREDITS SLIDE -->
+        <div class="section" id="card6">
+            <div class="fp-bg"></div>
+            <div class="slideContentContainer" id="ackContainer">
+                <div class="col-12" style="margin: -140px 0px 0px 0px;">
+                    <div class="row justify-content-center" style="height: 85vh;">
+                        <!-- visualization -->
+                        <div class="col-5" style="margin: 50px 0px 0px 0px">
+                            <div class="row justify-content-center">
+                                <img src="img/creditsBookTransp.png" style="height:73vh;">
+                            </div>
+                        </div>
+                        <!-- descriptive text -->
+                        <div class="col-5">
+                            <div class="backgroundTransparentWhiteFill">
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="margin: 5px 0px">Acknowledgements</p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-2">
+                                        <img src="img/cs171logo.png" width="130vh" height="50vh">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="img/harvardseaslogo.png" style="height:6vh; margin-left:2vw;">
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="subjectDetailText" style="font-size: 12px; margin-left:1vw;">We would like to thank <b>Professors Hanspeter Pfister, Johana Beyer</b>, and the CS171 teaching staff for their instruction and guidance. Special thank to our TF, <b>Robert Roessler</b> for his wisdom and hard work - we cannot thank you enough! We would also like to thank Max Rome for graciously granting us access to his data on water quality in the Charles. Thanks to David Bender for his input on our site graphics!</p>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="font-size: 18px; color:#6bc054; margin: -10px 0px -20px 0px;"><a href="https://docs.google.com/document/d/16GY8llTKTnDMNlk0KMVUlYhiiR8KC0yZpq-7g8VONxk/edit?usp=sharing">Process Book</a></p>
+                                </div>>
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="font-size: 18px; color:#6bc054; margin: 0px 0px -20px 0px;">Video Walk-Through</p>
+                                </div>
+
+                                <hr>
+
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="margin: -10px 0px 10px 0px;">Sources</p>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="font-size: 16px; color:#e6185a; margin: 0px;">Data</p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <p class="subjectDetailText" style="font-size: 12px; text-align: center;">
+                                        <a href="https://www.epa.gov/charlesriver/live-water-quality-data-individual-parameter-lower-charles-river">Live Water Quality Data - Individual Parameter for the Lower Charles River</a>
+                                        <br>
+                                        <a href="https://www.crwa.org/water-quality-data.html">Water Quality Reports and Data</a>
+                                        <br>
+                                        <a href="https://www.epa.gov/charlesriver/charles-river-initiative#ReportCards">Annual Report Cards</a>
+                                        <br>
+                                        <a href="https://www.mwra.com/cso/csoplan2005.pdf">1999 Annual CSO Report</a>
+                                        <br>
+                                        <a href="https://www.mwra.com/harbor/html/wq_data.htm">Environmental Monitoring Data from Boston Harbor & Tributary Rivers</a>
+                                    </p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <p class="subjectHeading" style="font-size: 16px; color:#e6185a; margin: 10px 0px 0px 0px;">Literature</p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <p class="subjectDetailText" style="font-size: 10px; text-align: center;">
+                                        <a href=" https://en.wikipedia.org/wiki/Dirty_Water">https://en.wikipedia.org/wiki/Dirty_Water</a>
+                                        <br>
+                                        <a href="https://www.wbur.org/news/2017/07/18/bostonians-swim-charles-river">https://www.wbur.org/news/2017/07/18/bostonians-swim-charles-river</a>
+                                        <br>
+                                        <a href="https://www.epa.gov/charlesriver">https://www.epa.gov/charlesriver</a>
+                                        <br>
+                                        <a href="https://thecharles.org/city-splash/">https://thecharles.org/city-splash/</a>
+                                        <br>
+                                        <a href="https://www.wbur.org/news/2017/09/08/charles-river-water-quality-swimming">https://www.wbur.org/news/2017/09/08/charles-river-water-quality-swimming</a>
+                                        <br>
+                                        <a href="https://extension.arizona.edu/sites/extension.arizona.edu/files/pubs/az1624.pdf">https://extension.arizona.edu/sites/extension.arizona.edu/files/pubs/az1624.pdf</a>
+                                        <br>
+                                        <a href="http://sitn.hms.harvard.edu/flash/2019/charles/">http://sitn.hms.harvard.edu/flash/2019/charles/</a>
+                                        <br>
+                                        <a href="https://www.epa.gov/npdes/combined-sewer-overflows-csos">https://www.epa.gov/npdes/combined-sewer-overflows-csos</a>
+                                        <br>
+                                        <a href="https://www.crwa.org/promote-resilience.html">https://www.crwa.org/promote-resilience.html</a>
+                                        <br>
+                                        <a href="https://www.wcvb.com/article/love-that-dirty-water-epa-grades-charles-river-water/27961470#">https://www.wcvb.com/article/love-that-dirty-water-epa-grades-charles-river-water/27961470#</a>
+                                        <br>
+                                        <a href="https://www.crwa.org/uploads/1/2/6/7/126781580/cyanobacteriafactsheetfinal.pdf">https://www.crwa.org/uploads/1/2/6/7/126781580/cyanobacteriafactsheetfinal.pdf</a>
+                                        <br>
+                                        <a href="https://www.wbur.org/news/2017/09/08/charles-river-water-quality-swimming">https://www.wbur.org/news/2017/09/08/charles-river-water-quality-swimming</a>
+                                        <br>
+                                        <a href="https://www.crwa.org/monitor.html">https://www.crwa.org/monitor.html</a>
+                                        <br>
+                                        <a href="https://www.charlesfloatingwetland.com/water-quality.html">https://www.charlesfloatingwetland.com/water-quality.html</a>
+                                        <br>
+                                        <a href=" https://www.clf.org/blog/charles-river-swim-cancelled-stormwater-pollution/"> https://www.clf.org/blog/charles-river-swim-cancelled-stormwater-pollution/</a>
+                                        <br>
+                                        <a href="https://cees.iupui.edu/research/algal-toxicology/bloomfactors#:~:text=Water%20temperatures%20above%2025%C2%B0,12%2D15%C2%B0C).">https://cees.iupui.edu/research/algal-toxicology/...</a>
+                                        <br>
+                                        <a href="https://www.epa.gov/nutrientpollution/climate-change-and-harmful-algal-blooms">https://www.epa.gov/nutrientpollution/climate-change-and-harmful-algal-blooms</a>
+                                        <br>
+                                        <a href="https://www.crwa.org/charles-river.html#Challenges">"https://www.crwa.org/charles-river.html#Challenges</a>
+                                        <br>
+                                        <a href="https://thecharles.org/floating-wetlands/">https://thecharles.org/floating-wetlands/</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--waves container at top-->
+            <div id="animatedWavesContainerTopofScreen"> <!-- displayed when animated waves are needed-->
+                <div class="waves-box-top-of-screen">
+                    <svg class="waves-top-of-screen" viewBox="0 24 150 45" preserveAspectRatio="none" shape-rendering="auto">
+                        <!-- citation: Daniel Österman - 2019 - https://codepen.io/goodkatz/pen/LYPGxQz?editors=1100 Used Under Free License-->
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                        </defs>
+                        <g class="parallax-single" id="animatedWavesTopofScreen">
+                            <use xlink:href="#gentle-wave" id="animatedWavesTopofScreenCrest" x="48" y="4"/> <!--wave crest-->
+                            <use xlink:href="#gentle-wave" id="animatedWavesTopofScreen" x="48" y="7"/> <!--underwater wave-->
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <!--Waves end-->
+        </div>
+
+        <!--- END SOURCES AND CREDITS SLIDE -->
+
+
+    </div>
+    <!-- end of middle full page content-->
+
+    <!--Waves Container-->
+    <div id="sim-container">
+
+        <div id="animatedWavesContainer"> <!-- displayed when animated waves are needed-->
+            <div class="waves-box">
+                <svg class="waves" viewBox="0 24 150 45" preserveAspectRatio="none" shape-rendering="auto">
+                    <!-- citation: Daniel Österman - 2019 - https://codepen.io/goodkatz/pen/LYPGxQz?editors=1100 Used Under Free License-->
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax-single" id="animatedWaves">
+                        <use xlink:href="#gentle-wave" id="animatedWavesCrest" x="48" y="4"/> <!--wave crest-->
+                        <use xlink:href="#gentle-wave" id="animatedWavesFill" x="48" y="7"/> <!--underwater wave-->
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+            <!--Water Container-->
+            <div class="water-box"></div>
+            <!--Water End-->
+        </div>
+
+        <div id="animatedWavesContainer-BROWN"> <!-- displayed when polluted animated waves are needed-->
+            <div class="waves-box">
+                <svg class="waves" viewBox="0 24 150 45" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax-single" id="animatedWavesBROWN">
+                        <use xlink:href="#gentle-wave" id="animatedWavesCrestBROWN" x="48" y="4"/> <!--wave crest-->
+                        <use xlink:href="#gentle-wave" id="animatedWavesFillBROWN" x="48" y="7"/> <!--underwater wave-->
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+            <!--Water Container-->
+            <div class="water-box water-box-brown"></div>
+            <!--Water End-->
+        </div>
+
+        <div id="animatedWavesContainer-GREEN"> <!-- displayed when cyanobloomed-up animated waves are needed-->
+            <div class="waves-box waves-box-green">
+                <svg class="waves" viewBox="0 24 150 45" preserveAspectRatio="none" shape-rendering="auto"> <!--viewBox attribute is a list of four numbers: min-x, min-y, width and height-->
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax-single" id="animatedWavesGREEN">
+                        <use xlink:href="#gentle-wave" id="animatedWavesCrestGREEN" x="48" y="4"/> <!--wave crest-->
+                        <use xlink:href="#gentle-wave" id="animatedWavesFillGREEN" x="48" y="7"/> <!--underwater wave-->
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+            <!--Water Container-->
+            <div class="water-box water-box-green"></div>
+            <!--Water End-->
+        </div>
+
+    </div>
+
+
+</div> <!--END OF WHOLE SITE CONTAINER-->
+
+
+<!-- External JS libraries-->
+
+<!-- BOOTSTRAP -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simple-statistics/1.0.1/simple_statistics.min.js" integrity="sha512-Chl+a6t3arbBniJQO1q38ay4dB8C7NFehGOVAvGbgKQrYjue9oOvPHHPDv4SE7hORPxBc0fyKaWRLBW9DN7WGQ==" crossorigin="anonymous"></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="js/d3-tip.js"></script>
+<script src="https://unpkg.com/d3-interpolate-path/build/d3-interpolate-path.min.js"></script> <!--path interpolator to fix jagged edges-->
+
+<!-- fullPage -->
+<script type="text/javascript" src="js/fullpage-extensions/fullpage.scrollHorizontally.min.js"></script>   <!--extension-->
+<script type="text/javascript" src="js/fullpage-extensions/fullpage.parallax.min.js"></script>   <!--extension-->
+<script type="text/javascript" src="js/fullpage/fullpage.extensions.min.js"></script> <!--fullpage.js that allows extensions-->
+
+<!-- Custom JS Scripts -->
+<script src="js/cso.js"></script>
+<script src="js/swimmability.js"></script>
+<script src="js/main.js"></script>
+<script src="js/waterQualityBarChart.js"></script>
+<script src="js/waterQualityBrushMap.js"></script>
+<script src="js/simulationSVGTransitions.js"></script>
+<script src="js/fullSimulation.js"></script> <!--old simulation, depricated-->
+<script src="js/phosphorous.js"></script>
+<script src="js/chlorophyll.js"></script>
+<script src="js/charlesRiverMap.js"></script>
+<script src="js/ecoli-rain-chart.js"></script>
+<script src="js/cyano-temp-scatter-chart.js"></script>
+<script src="js/collapsable.js"></script>
+<script src="js/interactiveDiagram.js"></script>
+<script src="js/riverhealthsimulation.js"></script>
+<script src="js/title-card-one.js"></script>
+<script src="js/title-card-two.js"></script>
+<script src="js/title-card-after-hook-graphics.js"></script>
+<script src="js/ahaSlideGraphics.js"></script>
+<script src="js/cyanoAdvisories.js"></script>
+
+<!-- Cloud Flare -->
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="2100671c3dfe39b4e29dab9a-|49" defer=""></script>
+
+</body>
+
+</html>

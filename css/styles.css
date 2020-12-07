@@ -1,0 +1,1703 @@
+/***********************/
+/*SITE MASTER SCHEMA   */
+/***********************/
+
+/*ecoli pollution: brown #935116*/
+/*nutrient runoff: purple #BB8FCE*/
+/*temperature: golden-yellow #F4D03F*/
+/*cyanobacteria: blue-green #45B39D*/
+/*zooplankton: #1A5276*/
+/*smallfish: orange #E67E22*/
+/*bigfish: silver grey #839192*/
+/*phosphorus: #CB4335*/
+/*wetland habitat: dark-green #196F3D*/
+
+/***********************/
+/*GENERIC SITE ELEMENTS*/
+/***********************/
+
+
+body {
+    color: white;
+}
+
+
+h1{
+    /*color: white;*/
+    color: forestgreen;
+    opacity: 0.85;
+    /*font-family: 'Permanent Marker', cursive;*/
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    font-size: 5em;
+    /*-webkit-text-shadow: 0 .3rem .9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
+    /*text-shadow: 0 0.3rem 0.9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
+    letter-spacing: -3px;
+}
+
+h2{
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+    /*-webkit-text-shadow: 0 .3rem .9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
+    /*text-shadow: 0 0.3rem 0.9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
+    letter-spacing: -1px;
+}
+
+h4{
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    letter-spacing: -1px;
+}
+
+
+p {
+    font-size: 2em;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    /*text-shadow: -1px 1px 8px rgba(0,0,0,.8);*/
+}
+
+table {
+    border-spacing: 0;
+}
+
+label {
+    color: black;
+}
+
+.button {
+    background-color: forestgreen;
+    color: white;
+    border-color: white;
+}
+
+.button:hover {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+a {
+    color: forestgreen;
+}
+
+/*****************/
+/*GENERIC CLASSES*/
+/*****************/
+
+.section{
+    text-align:center;
+}
+
+.intro{
+    height: 25%;
+}
+
+#swimQuestionaireInteractiveContentBox{
+    opacity: 0;
+}
+
+.emptyWaterBlock{
+
+}
+
+.slideSpacer50 {
+    height: 50px;
+}
+
+.slideSpacer70 {
+    height: 70px;
+}
+
+.blankHorizontal50 {
+    width: 50px;
+}
+
+.blankHorizontal70 {
+    width: 70px;
+}
+
+.slideTitle {
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+}
+
+.slideTitleHigh {
+    position: absolute;
+    top: 5vh;
+}
+
+.subjectHeading {
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subjectDetailText {
+    color: black;
+    font-size: 20px;
+    text-align: left;
+}
+
+.backgroundTransparentWhiteFill
+{
+    background-color: rgba(255, 255, 255, 0.70);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    /*border: thin solid grey;*/
+}
+
+.backgroundTransparentWhiteFillNoMargin
+{
+    background-color: rgba(255, 255, 255, 0.70);
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+    /*border: thin solid grey;*/
+}
+
+.backgroundNoFillWithMargin
+{
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Setting the backgrounds for each section / slide */
+
+.fp-bg:before{
+    content: '';
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.4);
+    top:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+}
+.fp-bg{
+    background-size: cover;
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
+    opacity:0.78; /*MASTER OPACITY: lighten the background*/
+}
+
+
+/*GENERIC CHART COMPONENTS*/
+.axis {
+    font-size: 12px;
+    color: grey;
+}
+
+.bar-axis {
+    color: grey;
+}
+
+.bar-axis path, .bar-axis line {
+    color: grey;
+    fill: none;
+    stroke: 1;
+}
+
+.axis-label {
+    color: grey;
+    font-size: 13px;
+    text-anchor: middle;
+}
+
+.bar-axis-label {
+    color: grey;
+    font-size: 13px;
+    text-anchor: middle;
+}
+
+
+/*************/
+/*GENERIC IDs*/
+/*************/
+
+#siteContainer {
+    height: 100%;
+}
+
+#menuContainer {
+    opacity: 100;
+}
+
+#contentContainer {
+    height: 70vh;
+}
+
+#simContainer {
+    height: 20vh;
+}
+
+/*SITE NAVIGATION MENU BAR*/
+#menu li {
+    display:inline-block;
+    margin: 10px;
+    color: #000;
+    background:#fff;
+    background: rgba(255,255,255, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#menu li.active{
+    background:#666;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
+#menu li a{
+    text-decoration:none;
+    color: #000;
+}
+#menu li.active a:hover{
+    color: #000;
+}
+#menu li:hover{
+    background: rgb(213, 227, 209);
+}
+#menu li a,
+#menu li.active a{
+    padding: 9px 18px;
+    display:block;
+}
+#menu li.active a{
+    color: #fff;
+}
+#menu{
+    position:center;
+    top:0;
+    left:0.5%; /* SLIGHT ADJUSTMENT TO ALIGN CENTER */
+    height: 40px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+
+/*///////////////////////////*/
+/*   SIMULATION CONTAINER     */
+/*///////////////////////////*/
+
+.waves-box {
+    width: 100%;
+    position: absolute;
+    bottom: -2vh;
+}
+
+.waves-box-top-of-screen {
+    width: 100%;
+    position: absolute;
+    top: 4vh;
+}
+
+.ackWaves-box{
+    width: 100%;
+    position: absolute;
+    bottom: 6vh;
+}
+
+.waves-box-interactive-diagram{
+    width: 100%;
+    position: absolute;
+    bottom: 22vh;
+}
+
+.waves-box-simulation {
+    width: 100%;
+    position: absolute;
+    bottom: 40%;
+}
+
+.waves-box-health-sim {
+    width: 100%;
+    position: absolute;
+    bottom: 50%;
+}
+
+.waves-box-green {
+    width: 100%;
+    position: absolute;
+    bottom: -2vh;
+}
+
+.waves-box-finish {
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+}
+
+.waves {
+    position:relative;
+    width: 100%;
+    height: 1vh;
+    margin-bottom: 0px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+}
+
+.waves-top-of-screen {
+    position:relative;
+    width: 100%;
+    height: 0vh;
+    margin-bottom: 0px; /*Fix for safari gap*/
+    min-height:90px;
+    max-height:140px;
+}
+
+.content {
+    position:relative;
+    height:100vh;
+    text-align:center;
+    background-color: white;
+}
+
+.sim-tooltip{
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+/* Basic WAVE Animation */
+
+#animatedWavesContainer {
+    opacity: 0;
+}
+
+#animatedWavesContainerTopofScreen {
+    opacity: 1;
+}
+
+#animatedWavesContainer-BROWN {
+    opacity: 0;
+}
+
+#animatedWavesContainer-GREEN {
+    opacity: 0;
+}
+
+.parallax > use {
+    animation: move-forever 35s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 17s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 20s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 23s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 30s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height:40px;
+        min-height:40px;
+    }
+}
+
+.parallax-single > use {
+    animation: move-forever 35s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+
+
+#animatedWaves {
+    fill: lightblue;
+    /*fill: rgba(173,216,230,0.9);*/
+}
+
+#animatedWavesTopofScreen {
+    fill: lightblue;
+    /*fill: rgba(173,216,230,0.9);*/
+}
+
+#animatedWavesTopofScreenCrest {
+    fill: rgba(115, 112, 229, 1.0);
+}
+
+#animatedWavesFill{
+    fill: lightblue;
+    opacity: 1.0;
+}
+
+#animatedWavesCrest {
+    fill: rgba(115, 112, 229, 1.0);
+}
+
+#animatedWavesCrestBROWN {
+    fill: #703d0f;
+}
+
+#animatedWavesFillBROWN {
+    fill: #935116;
+}
+
+#animatedWavesCrestGREEN {
+    fill: rgba(62, 122, 62, 1.0);
+}
+
+#animatedWavesFillGREEN {
+    fill: rgba(144,238,144,1.0);
+}
+
+#animatedWavesGREEN {
+    fill: rgba(144,238,144,1.0);
+}
+
+#animatedWavesBROWN {
+    fill: rgba(165,42,42,1.0);
+}
+
+#animatedWavesInteractiveDiagram {
+    fill: lightblue;
+}
+
+#animatedWavesFillInteractiveDiagram{
+    fill: lightblue;
+    opacity: 1.0;
+}
+
+#animatedWavesCrestInteractiveDiagram {
+    fill: rgba(115, 112, 229, 1.0);
+}
+
+
+/****BOTTOM OF SCREEN BLOCK OUT FOR WATER****/
+.water-box {
+    width: 100%;
+    height: 0vh;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(173,216,230,1.0);
+}
+
+.water-box-brown {
+    background-color: #935116;
+    width: 100%;
+    height: 0vh;
+    position: absolute;
+}
+
+.water-box-green {
+    background-color: rgba(144,238,144,1.0);
+    width: 100%;
+    height: 0vh;
+    position: absolute;
+}
+
+.ackWater-box {
+    width: 100%;
+    height: 6vh;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.water-box-interactive-diagram {
+    width: 100%;
+    height: 22vh;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(173,216,230,0.9);
+}
+
+.water-box-simulation {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(173,216,230,0.9);
+}
+
+#water-box-brown {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(165,42,42,0.9);
+}
+
+#water-box-green {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(144,238,144,0.9);
+}
+
+.water-box-finish {
+    width: 100%;
+    height: 6vh;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.97);
+}
+
+.river-bed-bottom {
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    bottom: 0;
+    background-color: #6b6c77;
+    opacity: 0.85;
+}
+/*//////////////////////////////*/
+/*   END SIMULATION CONTAINER   */
+/*//////////////////////////////*/
+
+
+
+
+
+/************************/
+/*SLIDE SPECIFIC CLASSES*/
+/************************/
+
+/*
+* Setting the backgrounds for each section / slide
+*/
+
+.fp-bg:before{
+    content: '';
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.0);
+    top:0;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+}
+.fp-bg{
+    background-size: cover;
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
+    opacity:0.20; /*MASTER OPACITY: lighten the background*/
+    /*background-image: url('../img/wcpaper.jpg'); !*master background for all*!*/
+}
+
+
+/********************/
+/*SLIDE SPECIFIC IDs*/
+/********************/
+
+#card1Title {
+    position: relative;
+    top: -25vh;
+    left: -25vw;
+}
+
+#card2Title {
+    position: relative;
+    top: -10vh;
+    left: 25vw;
+}
+
+#swimQuestionaireTitle{
+    position: relative;
+    top: -10vh;
+    opacity: 0;
+}
+
+#swimQuestionaireInteractiveContentBox{
+    position: relative;
+    top: -8vh;
+}
+
+#card3Title {
+    font-size: 20px;
+    width: 200vh;
+    position: absolute;
+    top: 70vh;
+    left: -10vh;
+}
+
+#slide0 .fp-bg {
+    /*background-image: url('../img/wcpaper.jpg');*/
+    background-image: url('../img/title-card-back-drop.jpg');
+    opacity:0;
+    background-size: 100% 110%;
+    background-position: center 100%;
+}
+
+/*#slide0 .fp-prev {*/
+/*    opacity: 0; !* Don't show left arrow at start of presentation*!*/
+/*}*/
+
+.quizButton {
+    position: relative;
+    width: 30vh;
+    height: 30vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    margin: 2vh;
+    border: 0px;
+    margin-left: 10vh;
+    margin-right: 10vh;
+}
+
+.quizButtonYesImage {
+    background: url('../img/FishInBubble.png') no-repeat transparent;
+    background-size: 30vh 30vh;
+}
+
+.quizButtonNoImage {
+    background: url('../img/DeadFishInBubble.png') no-repeat transparent;
+    background-size: 30vh 30vh;
+}
+
+#slide1A .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide1B .fp-bg {
+    /*river diagram*/
+    background-image: url('../img/riverDiagramBackground.png');
+    /*background-image: url('../img/placeholders/riverDiagram.jpg');*/
+    background-size: 100% 100%;
+    opacity: 0.80;
+    background-position: center 0%;
+}
+
+#slide1C .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide1 .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    /*background-image: url('../img/placeholders/styleCardTypical.jpg');*/
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide2 .fp-bg {
+    background-image: url('../img/back-drop-typical-2.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+
+#slide3 .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide4 .fp-bg {
+    background-image: url('../img/back-drop-typical-2.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide5 .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+
+#slide5A .fp-bg {
+    background-image: url('../img/back-drop-typical-2.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide6 .fp-bg {
+    background-image: url('../img/back-drop-typical.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide7 .fp-bg {
+    background-image: url('../img/back-drop-typical-2.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide8 .fp-bg {
+   /*interactive map image - no special background*/
+    background-image: url('../img/back-drop-typical-blank.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 100%;
+}
+
+#slide9 .fp-bg {
+    background-image: url('../img/back-drop-typical-2.jpg');
+    opacity:1.0;
+    background-size: 100% 100%;
+    background-position: center 110%;
+}
+
+#slide10 .fp-bg {
+    /*river simulation*/
+    background-image: url('../img/title-card-back-drop-no-river.jpg');
+    opacity:1;
+    background-size: 100% 100%;
+    background-position: center 100%;
+    /*background-image: url('../img/placeholders/riverDiagram.jpg');*/
+    /*background-size: 100% 130%;*/
+    /*opacity: 0.60;*/
+    /*background-position: center 0%;*/
+}
+
+#slide11 .fp-bg {
+    /*summary slide*/
+    background-image: url('../img/back-drop-typical.jpg');
+    /*background-image: url('../img/title-card-back-drop.jpg');*/
+    opacity:1;
+    background-size: 100% 119%;
+    background-position: center 100%;
+    /*background-image: url('../img/placeholders/riverDiagram.jpg');*/
+    /*background-size: 100% 130%;*/
+    /*opacity: 0.60;*/
+    /*background-position: center 0%;*/
+}
+
+#card6 .fp-bg {
+    /*credits slide*/
+    background-image: url('../img/title-card-back-drop-split-water.jpg');
+    opacity:1;
+    background-size: 100% 130%;
+    background-position: center 100%;
+}
+
+#slide11Title {
+    position: absolute;
+    top: 10vh;
+    right: -45vh;
+}
+
+#ackContainer {
+    position: relative;
+    top:10vh;
+}
+
+#scrollTitleIcon {
+    position: relative;
+    height: 20vh;
+    top: 12vh;
+    left: 45vw;
+}
+
+.afterTitleHookText {
+    position: relative;
+    top: 10vh;
+    height: 35vh;
+    width: 60vw;
+
+}
+
+#wetlandImageCarousel {
+    height: 20vh;
+    width: 20vw;
+}
+
+.carouselCardContainer {
+    height: 70vh;
+    background: lightgrey;
+    padding: 1vh;
+}
+
+/*Animated simple gallery effect*/
+.fling-minislide {width: 100%; height:40vh; overflow:visible}
+.fling-minislide img{ position:absolute; animation:fling-minislide 45s infinite; right:3.5vw; opacity:0; width: 35vw; height: 35vh;}
+
+@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+.fling-minislide img:nth-child(8){animation-delay:0s;}
+.fling-minislide img:nth-child(7){animation-delay:5s;}
+.fling-minislide img:nth-child(6){animation-delay:10s;}
+.fling-minislide img:nth-child(5){animation-delay:15s;}
+.fling-minislide img:nth-child(4){animation-delay:20s;}
+.fling-minislide img:nth-child(3){animation-delay:25s;}
+.fling-minislide img:nth-child(2){animation-delay:30s;}
+.fling-minislide img:nth-child(1){animation-delay:35s;}
+
+/************************************************/
+/*SVG ANIMATED ELEMENTS SPECIFIC CLASSES AND IDs*/
+/************************************************/
+
+
+#sim-container {
+    position: absolute;
+    bottom: 0vh;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+}
+
+.noPaddingRow {
+    margin: 0;
+    padding: 0;
+}
+
+
+#simulationSVGTransitionContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#testSVGbutton {
+    height: 6vh;
+    width: 15vh;
+    margin-top: 10vh;
+}
+
+#charles-river-outline-container {
+    fill: lightblue;
+}
+
+/************************************************/
+/*FULL SIMULATION SPECIFIC CLASSES AND IDs*/
+/************************************************/
+
+
+#fullSimulationContainer {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.simulationStatusText {
+    height:5vh;
+    padding: 0;
+    margin-top: 8vh;
+    margin-bottom: 0;
+}
+
+#simulationWaterQualityScore { /*diagnostic text*/
+    margin-left: 5vh;
+    color: dimgrey;
+    opacity: 0;
+}
+
+#simulationElementsShownAboveRiver { /*diagnostic text*/
+    position: absolute;
+    margin-left: 5vh;
+    color: #005a1c;
+    opacity: 0;
+}
+
+#simulationElementsShownBelowRiver { /*diagnostic text*/
+    position: absolute;
+    margin-left: 5vh;
+    color: darkblue;
+    opacity: 0;
+}
+
+
+.simControlBlock {
+    margin-top: 2vh;
+}
+
+.simButton {
+    height: 6vh;
+    width: 15vh;
+    margin-top: 2vh;
+}
+
+#cfoControl {
+    width: 25vh;
+    margin-left: 2vh;
+    margin-top: 4vh;
+}
+
+#nutrientControl {
+    width: 25vh;
+    margin-left: 2vh;
+    margin-top: 4vh;
+}
+
+.simInputText {
+    color: black;
+    size: 10px;
+    margin-top: 2vh;
+}
+
+#healthBarTitle {
+    color: white;
+    font-size: 24px;
+}
+
+/*******************************/
+/*ECOLI CHART SPECIFIC CLASSES*/
+/*******************************/
+
+#ecoliwaterqualityTitle {
+    position: absolute;
+    top: 3vh;
+}
+
+#ecoliwaterqualitybarchart {
+    padding-top: 1vh;
+    margin-top: 0vh;
+    padding-bottom: 1vh;
+}
+
+.ecoliBarCharttooltip {
+    position: absolute;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    background: lightsteelblue;
+    border-radius: 8px;
+    /*  pointer-events: none;	This line needs to be removed */
+}
+
+.ecoliBarCharttoolTipTitleFont {
+    color: #d00202;
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#ecoliwaterqualitybrushmap {
+    width: 100%;
+    /*background-image: url('../img/charlesRiverStationMap.png');*/
+    /*background-size: 1140px 200px;*/
+    /*background-position: 77.5% 50%;*/
+    /*background-repeat: no-repeat;*/
+}
+
+.ecoli-axis-label {
+    font-size: 14px;
+}
+
+.stationCircleLabel {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/*******************************/
+/*CSO STACK CHART SPECIFIC CLASSES*/
+/*******************************/
+#cfo-stack-chart {
+    width: 90%;
+    height: 100%;
+    fill: url(#area-gradient);
+    stroke-width: 0px;
+}
+
+/*
+#cfo-stack-chart circle:hover {
+    fill: lightgreen
+    cursor: pointer;
+}*/
+
+.cfo-tooltip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.cfo-y-label{
+    fill: black;
+    font-size: 14px;
+}
+
+.cfo-x-label{
+    fill: black;
+    font-size: 14px;
+}
+
+.cso-chart-text{
+    color: black;
+}
+
+.tooltip-text{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tooltip-text1{
+    color: black;
+    font-size: 16px;
+}
+
+.tooltip-text2{
+    color: black;
+    font-size: 16px;
+}
+
+.tooltip-text3{
+    color: black;
+    font-size: 16px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.cso-legend{
+    fill: black;
+    font-size: 11px;
+
+}
+
+/*******************************/
+/*SWIMMABILITY CHART SPECIFIC CLASSES*/
+/*******************************/
+#swimmability-panel h3 {
+    width: 680px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+#swimmability-chart {
+    width: 1300px;
+    height: 520px;
+    color: black;
+    position: relative;
+}
+
+#swimmability-blurb-panel {
+    width: 500px;
+    position: absolute;
+    left: 800px;
+    font-size: 16px;
+    z-index: 1;
+}
+
+#swimmability-blurb a {
+    color: black;
+    font-weight: bold;
+}
+
+#swimmability-blurb-panel .subjectDetailText {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#swimmability-chart .month {
+    fill: lightgray;
+}
+
+#swimmability-chart .too-cold {
+    fill: darkgrey;
+    background-color: darkgrey;
+}
+
+#swimmability-chart .swimmable {
+    fill: #2db8e5;
+    background-color: #2db8e5;
+}
+
+#swimmability-chart .not-swimmable {
+    fill: #935116;
+    background-color: #935116;
+}
+
+#swimmability-chart .label-month {
+    fill: black;
+}
+
+#swimmability-chart .swimmable-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#swimmable-legend {
+    margin-top: 50px;
+}
+
+#swimmability-chart .swimmable-legend-row {
+    clear: both;
+    overflow: auto;
+    padding: 5px 0;
+}
+
+#swimmability-chart .swimmable-legend-cell {
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+#swimmability-chart .swimmable-legend-label {
+    float: left;
+    padding-top: 3px;
+    margin-left: 8px;
+}
+
+#swimmability-chart .day {
+    cursor: pointer;
+}
+
+.swimmability-tooltip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+/*******************************/
+/*CYANOBACTERIA ADVISORIES CHART SPECIFIC CLASSES*/
+/*******************************/
+#cyanoAdvisoriesChart {
+    width: 100vh;
+    height: 60vh;
+    margin: auto;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.bar {
+    fill: #45B39D;
+}
+
+text {
+    font-size: 12px;
+    fill: black;
+}
+
+
+line#limit {
+    stroke: gray;
+    stroke-width: 3;
+    stroke-dasharray: 3 6;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.grid .tick line {
+    stroke: #9FAAAE;
+    stroke-opacity: 0.3;
+}
+
+
+text.days {
+    font-size: 14px;
+}
+
+text.numdays {
+    font-size: 14px;
+    fill: white;
+}
+
+text.title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+text.label {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/*******************************/
+/*PHOSPHORUS CHART SPECIFIC CLASSES*/
+/*******************************/
+
+#phosphorus-chart {
+    height: 100%;
+    width: 100%;
+}
+
+#phosphorus-chart .axis {
+    font: 10px sans-serif;
+}
+
+#phosphorus-chart .axis path,
+#phosphorus-chart .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+#phosphorus-chart .axis-label {
+    fill: #888;
+    font-size: 9px;
+}
+
+.phosphorus-tooltip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+#phosphorus-chart circle:hover {
+    fill: black;
+    cursor: pointer;
+}
+
+
+/*******************************/
+/*CHLOROPHYLL CHART SPECIFIC CLASSES*/
+/*******************************/
+#chlorophyll-final-blurb {
+    height: 100%;
+    width: 100%;
+    display: none;
+    font-size: 30px;
+    padding-bottom: 2vh;
+    color: black;
+    font-weight: bold;
+}
+
+#chlorophyll-chart {
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#chlorophyll-chart .axis {
+    font: 10px sans-serif;
+}
+
+#chlorophyll-chart .axis path,
+#chlorophyll-chart .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.chlorophyll-tooltip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+.chlorophy-x-label{
+    fill: #888;
+    font-size: 8px;
+}
+
+.chlorophy-y-label{
+    fill: #888;
+    font-size: 8px;
+    color: #8d7f71;
+}
+
+
+
+/*******************************/
+/*INTERACTIVE WETLAND MAP CHART SPECIFIC CLASSES*/
+/*******************************/
+
+#charlesRiverInteractiveMapContainer {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+}
+
+#wetlandMapTitle {
+    margin-top:3vh;
+    padding-top: 0vh;
+}
+
+    /***********************************/
+/*ECOLI RAIN CHART SPECIFIC CLASSES*/
+/***********************************/
+
+#ecoliRainChart {
+    height: 100%;
+    width: 100%;
+}
+
+.cut-off-text {
+    font-size: 12px;
+}
+
+.ecoli-rain-tooltip {
+    position: absolute;
+    text-align: left;
+    color: white;
+    padding: 12px;
+    line-height: 1;
+    font: 11px sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    /*opacity: .75;*/
+    /*border: 1.5px;*/
+    /*border-color: darkgrey;*/
+    /*border-style: solid;*/
+    border-radius: 2px;
+    pointer-events: none;
+    /*font-weight: bold;*/
+}
+
+
+/***********************************/
+/*CYANO TEMP CHART SPECIFIC CLASSES*/
+/***********************************/
+
+#cyanoScatterChart {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.year-titles {
+    font-size: large;
+    font-weight: bold;
+}
+
+.cyano-temp-chloro-tooltip {
+    position: absolute;
+    text-align: left;
+    color: white;
+    padding: 12px;
+    line-height: 1;
+    font: 11px sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    /*opacity: .75;*/
+    /*border: 1.5px;*/
+    /*border-color: darkgrey;*/
+    /*border-style: solid;*/
+    border-radius: 2px;
+    pointer-events: none;
+/*font-weight: bold;*/
+}
+
+.cyano-temp-phaeo-tooltip {
+    position: absolute;
+    text-align: left;
+    color: white;
+    padding: 12px;
+    line-height: 1;
+    font: 11px sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    /*opacity: .75;*/
+    /*border: 1.5px;*/
+    /*border-color: darkgrey;*/
+    /*border-style: solid;*/
+    border-radius: 2px;
+    pointer-events: none;
+    /*font-weight: bold;*/
+}
+
+.tempClass, .yellow-color {
+    fill-opacity: .5;
+}
+
+
+/***********************************/
+/*INTERACTIVE WETLAND HISTORY CHART*/
+/***********************************/
+
+
+#wetlandContentContainer{
+    position: relative;
+    top: 20vh;
+    margin-right:5vw;
+}
+
+/*******************************/
+/*******************************/
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    text-color: black;
+
+}
+
+.collapse {
+    font-palette: dark;
+    color: black;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+
+
+
+/***********************************/
+/*Interactive Factors Diagram ***/
+
+#interactiveDiagram {
+    height: 100%;
+    width: 100%;
+
+    color: #a4a2a2;
+}
+
+/***********************************/
+
+
+/*******************************/
+/* RIVER HEALTH SIMULATION      */
+/*******************************/
+
+
+#fullSimulationVisibilityWrapper {
+    opacity:0;
+}
+
+#river-health-chart {
+    width: 100%;
+    height: 45vh;
+    position: absolute;
+    bottom: 0vh;
+}
+
+#river-health-top-panel {
+    width: 100%;
+    margin-bottom: 35vh;
+}
+
+.river-health-description {
+    color: black;
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.padTop {
+    padding-top:2vh;
+}
+
+.healthSimButtonGroup {
+    width: 125%;
+}
+
+#healthSimNextButton {
+    opacity: 0;
+    margin-top: 2vh;
+}
+
+#noNutrients {
+    opacity: 1;
+}
+
+#hasNutrients {
+    opacity: 1;
+}
+
+
+/*.river-health-button-nutrients {*/
+/*    color: white;*/
+/*    background-color: darkred;*/
+/*}*/
+
+/*.river-health-button-temp {*/
+/*    color: black;*/
+/*    background-color: gold;*/
+/*}*/
+
+/*.river-health-button-habitat {*/
+/*    color: white;*/
+/*    background-color: darkgreen;*/
+/*}*/
+
+
+
+/*******************************/
+/* TITLE CARD GRAPHICS         */
+/*******************************/
+
+#hookTitleCard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vh;
+}
+
+#afterHookTitleCard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vh;
+}
+
+#partOneTitleCard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vh;
+
+    /*fill:darkgreen;*/
+}
+
+#partTwoTitleCard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vh;
+}
+
+.detailTextBox {
+    position:absolute;
+    top: 37vh;
+    left: 25vw;
+    width: 50vw;
+    height: 30vh;
+    padding: 10px;
+    display:none;
+}
+
+#ahaAnimationsContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0vh;
+}
+
+/***********************************/
+
+
+/*******************************/
+/* NARRARATOR BOX GRAPHICS     */
+/*******************************/
+
+#narraratorBalloonBox {
+    position:absolute;
+    top: -4vh;
+    left: 1vw;
+    width: 5vw;
+    height: 5vh;
+    display:none;
+}
+
+#narraratorBalloonImage {
+    height: 35vh;
+    transform: scaleX(-1);
+}
+
+
+#narraratorFishBox {
+    position:absolute;
+    top: -4vh;
+    left: -10vw;
+    width: 5vw;
+    height: 5vh;
+    display:none;
+}
+
+#narraratorFishImage {
+    height: 10vh;
+    transform: scaleX(-1);
+}
+
+/***********************************/
+
+.backgroundCloud
+{
+    background-image: url("../img/cloud-bg.png");
+    padding: 60px 30px 60px 80px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+#cso-cloud-container {
+    position: absolute;
+    top: 120px;
+    height: 150px;
+    width: 100%;
+    z-index: 0;
+}
+
+#riverhealth-cloud-container{
+    position: absolute;
+    top: 120px;
+    height: 150px;
+    width: 100%;
+    z-index: 0;
+}
+
+#fish1-container{
+    position: absolute;
+    bottom: 0px;
+    height: 200px;
+    width: 100%;
+    z-index: 0;
+}
+
+
+#fish2-container{
+    position: absolute;
+    bottom: 150px;
+    height: 150px;
+    width: 100%;
+    z-index: 0;
+}
+
+#swimmer-container{
+    position: absolute;
+    bottom: 0px;
+    height: 150px;
+    width: 100%;
+    z-index: 0;
+}
