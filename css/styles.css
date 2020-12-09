@@ -1273,7 +1273,7 @@ text.label {
 /*******************************/
 
 #phosphorus-chart {
-    height: 70vh;
+    height: 55vh;
     width: 100%;
 }
 
@@ -1322,7 +1322,7 @@ text.label {
 }
 
 #chlorophyll-chart {
-    height: 70vh;
+    height: 55vh;
     width: 100%;
     display: none;
 }
