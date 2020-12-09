@@ -1,5 +1,10 @@
 console.log("Hello World!")
-console.log("Main.js is working.")
+
+//Set Master Browser Size
+let original_screen_format = {height: 927, width: 1922}; //original format proportions the graphics were designed for
+let original_aspect_ratio = original_screen_format.width / original_screen_format.height
+
+console.log("Original Aspect Ratio:", original_aspect_ratio)
 
 // Global Diagnostics feedback
 let verbose = false;
@@ -402,9 +407,9 @@ function slide1Answer(answer) {
     $("#swimQuestionaireTitle").remove();
 
     if (answer === 'yes') {
-        document.getElementById("questionaire_response").innerHTML = "</br></br><h1>You're not alone!</h1></br><div class=\"row justify-content-center backgroundTransparentWhiteFill\"><div class=\"subjectDetailText\">The Charles has made an incredible comeback since the rock band The Standells referred to the river as that “<a href=\"https://www.youtube.com/watch?v=62XRy-jFCm8\"><b><u>Dirty Water</u></b></a>” in their 1965 hit song of the same name. It is now considered one of the cleanest urban rivers in America and many hope to see the return of swimming. But first, we’ll need to understand if the river is swimmable. Luckily, several state agencies, nonprofits, and researchers have robust water quality monitoring programs. Let’s see what the data tells us!</div></div>"
+        document.getElementById("questionaire_response").innerHTML = "</br></br><h1>You're not alone!</h1></br><div class=\"row justify-content-center backgroundTransparentWhiteFill\"><div class=\"subjectDetailText\">The Charles has made an incredible comeback since the rock band The Standells referred to the river as that “<a href=\"https://www.youtube.com/watch?v=62XRy-jFCm8\" target=\"_blank\"><b><u>Dirty Water</u></b></a>” in their 1965 hit song of the same name. It is now considered one of the cleanest urban rivers in America and many hope to see the return of swimming. But first, we’ll need to understand if the river is swimmable. Luckily, several state agencies, nonprofits, and researchers have robust water quality monitoring programs. Let’s see what the data tells us!</div></div>"
     } else if (answer === 'no') {
-        document.getElementById("questionaire_response").innerHTML = "</br></br><h1>You're not alone...</h1></br><div class=\"row justify-content-center backgroundTransparentWhiteFill\"><div class=\"subjectDetailText\">The Charles River gets a bad rap as that “<a href=\"https://www.youtube.com/watch?v=62XRy-jFCm8\"><b><u>Dirty Water</u></b></a>,” and for many years it deserved that reputation. But over the last several decades, the Charles River’s water quality has made a tremendous comeback. Believe it or not, there is even a movement to return swimming to the river! But to do so safely, we’ll need to know if the Charles River is swimmable. Luckily, several state agencies, nonprofits, and researchers have robust water quality monitoring programs. Let’s see what the data tells us!\n</div></div>"
+        document.getElementById("questionaire_response").innerHTML = "</br></br><h1>You're not alone...</h1></br><div class=\"row justify-content-center backgroundTransparentWhiteFill\"><div class=\"subjectDetailText\">The Charles River gets a bad rap as that “<a href=\"https://www.youtube.com/watch?v=62XRy-jFCm8\" target=\"_blank\"><b><u>Dirty Water</u></b></a>,” and for many years it deserved that reputation. But over the last several decades, the Charles River’s water quality has made a tremendous comeback. Believe it or not, there is even a movement to return swimming to the river! But to do so safely, we’ll need to know if the Charles River is swimmable. Luckily, several state agencies, nonprofits, and researchers have robust water quality monitoring programs. Let’s see what the data tells us!\n</div></div>"
     }
     // "<div><p style='color:black; width=100%; position:relative; top:100px'></b></br></br></br></br><h1>You're Not Alone!</h1></br></br>The Charles River has made an incredible comeback since being termed “that dirty water” by </br>the rock band “The Sandells” in 1970. It is now considered one of the cleanest urban rivers in </br>America and many hope to see swimming return to the Charles River. But first, we’ll </br>need to know: is the Charles River swimmable? Luckily, several state agencies, </br>nonprofits, and researchers have robust water quality monitoring programs. </br>Let’s see what the data tells us!</p></div>";
 
@@ -479,28 +484,27 @@ d3.select("#cut-off-selector").on("change", function () {
 new fullpage('#siteContainer', {
     anchors: ['introduction', 'introduction2', 'introduction3', 'along_the_river', 'more_information', 'sources', 'acknowledgements'],
     // menu: '#menu',
-    slidesNavigation: true, //no navigation bubbles
-    slidesNavPosition: 'top',
+    slidesNavigation: true, // navigation bubbles
+    slidesNavPosition: 'top', //where the nav bubbles are
     scrollingSpeed:1200, //700 is default
 
-    licenseKey: '321D1256-FACD479D-8AC17177-3C4D9C4A', //commercial license
-
+    licenseKey: '324E8001-25884B3D-A249DB08-5C9EF4E90', //horizontal scrolling
     // sectionsColor: ['white', '#F5FFFA', '#f1f1ff', 'lightblue', 'white', '#f1f1ff', 'lightblue', 'white', '#f1f1ff', 'lightblue', 'lightgrey', "white"],
 
     v2compatible:false,
-    controlArrows:true, //false! (temporarily required during debugging)
+    controlArrows:true,
     verticalCentered:true,
     continuousVertical:false, //loop any upper or lower content?
     continuousHorizontal:false, //dont loop the river scroll
     ////////////////////////
-    keyboardScrolling:false, //false! //the user cannot scroll keyboard because it will let them skip sections and story will be out of order
+    keyboardScrolling:true, //false! //the user cannot scroll keyboard because it will let them skip sections and story will be out of order
     // i.e. if you push down it doesnt move "forward" it moves literally down and bypasses a bunch of content
     autoScrolling:true, //required for "card by card" fixed view
     scrollHorizontally:true, //allow the user to scroll both horizontally and vertically
-    scrollHorizontallyKey: 'QU5ZX3pqQ2MyTnliMnhzU0c5eWFYcHZiblJoYkd4NUt2Uw==',  //horizontal scrolling
+    scrollHorizontallyKey: '324E8001-25884B3D-A249DB08-5C9EF4E90',
     dragAndMove: 'horizontal',
     parallax: true,
-    parallaxKey: 'bWpuaWNrZXJzb24uZ2l0aHViLmlvX0FqT2NHRnlZV3hzWVhnPWZPSw==', //parallax single site activation key
+    parallaxKey: 'C1674176-328A4183-81D3F90E-673DB616',
     parallaxOptions: {
         type: 'reveal',
         percentage: 62,

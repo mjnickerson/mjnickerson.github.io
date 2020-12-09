@@ -28,7 +28,7 @@ class waterQualityBrushMap {
         vis.margin = { top: 0, right: 30, bottom: 38, left: 0 };
 
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-        vis.height = 200 - vis.margin.top - vis.margin.bottom;
+        vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
         // SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -52,7 +52,7 @@ class waterQualityBrushMap {
             .attr('fill', '#7370e5')//starting color
             .style("opacity", "1")
             .attr("d", vis.graphicsData[0].path)
-            .attr("transform", 'translate(525,16) rotate(0) scale(0.135,-0.07)')
+            .attr("transform", 'translate('+(525*svgTransitions.master_scale_width)+','+(16*svgTransitions.master_scale_height)+') rotate(0) scale('+(0.135*svgTransitions.master_scale_width)+','+(-0.07*svgTransitions.master_scale_height)+')')
 
 
         ////// ID Circles and ID Numbers //////
@@ -88,9 +88,9 @@ class waterQualityBrushMap {
             .append('circle')
             .attr("class", "stationCircle")
             .attr('fill', '#F87858')//starting color
-            .attr("r", 8)
-            .attr("cx",d => d.stationPointX)
-            .attr("cy",d => d.stationPointY)
+            .attr("r", 8*svgTransitions.master_scale_height)
+            .attr("cx",d => d.stationPointX*svgTransitions.master_scale_width)
+            .attr("cy",d => d.stationPointY*svgTransitions.master_scale_height)
             .on("click", function(event, d){
                 waterQualityChartClicked(d.station); //remove the # sign from station ID
             })
@@ -136,8 +136,8 @@ class waterQualityBrushMap {
             .attr("class", "stationCircleLabel")
             .attr('fill', 'darkorange')//starting color
             .text(d=> d.station_ID)
-            .attr("x",d => (d.stationPointX + d.fontOffsetX))
-            .attr("y",d => (d.stationPointY + d.fontOffsetY));
+            .attr("x",d => (d.stationPointX + d.fontOffsetX)*svgTransitions.master_scale_width)
+            .attr("y",d => (d.stationPointY + d.fontOffsetY)*svgTransitions.master_scale_height);
 
         ///////// Scales and axes ////////////
         vis.x = d3.scaleLinear()

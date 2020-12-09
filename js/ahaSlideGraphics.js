@@ -36,13 +36,18 @@ class ahaSlideGraphics {
             d3.xml('data/title-card-back-drop-city.svg'),
             d3.xml('data/title-card-back-drop-trees.svg'),
             d3.xml('data/title-card-back-drop-riverbank.svg'),
+            d3.xml('data/riverwavecrest-blue.svg'),
+            d3.xml('data/riverwavecrest-lightblue.svg'),
         ];
         Promise.all(svg_promises_background)
-            .then(([cityVar, treesVar, riverbankVar]) => {
+            .then(([cityVar, treesVar, riverbankVar, riverCrestVar, riverWaveVar]) => {
                 d3.select("#backgroundCity4").node().append(cityVar.documentElement);
                 d3.select("#backgroundTrees4").node().append(treesVar.documentElement);
                 d3.select("#backgroundRiverbank4").node().append(riverbankVar.documentElement);
+                d3.select("#backgroundRiverAnimationWaveCrest4").node().append(riverCrestVar.documentElement);
+                d3.select("#backgroundRiverAnimationWave4").node().append(riverWaveVar.documentElement);
             });
+
 
         //empty layers for background containers
         // layer order here determines draw order!!!!
@@ -66,19 +71,19 @@ class ahaSlideGraphics {
             .style('opacity', 1.0)
 
         //the y heights for each anchor of the transitions
-        vis.background_transitions_Y = [[vis.height - 255, vis.height - 550], //city
-            [vis.height - 200, vis.height - 480], //trees
-            [vis.height - 30, vis.height - 310], //water fill
-            [vis.height - 650, (vis.height - 420)], //animated wave surface crest
-            [vis.height - 650, vis.height - 410], //animated river top
-            [vis.height + 20, vis.height - 70], //riverbank
+        vis.background_transitions_Y = [[vis.height - (255*svgTransitions.master_scale_height), vis.height - (550*svgTransitions.master_scale_height)], //city
+            [vis.height - (200*svgTransitions.master_scale_height), vis.height - (480*svgTransitions.master_scale_height)], //trees
+            [vis.height - (30*svgTransitions.master_scale_height), vis.height - (310*svgTransitions.master_scale_height)], //water fill
+            [vis.height - (110*svgTransitions.master_scale_height), vis.height - (390*svgTransitions.master_scale_height)], //animated wave surface crest
+            [vis.height - (100*svgTransitions.master_scale_height), vis.height - (380*svgTransitions.master_scale_height)], //animated river top
+            [vis.height + (20*svgTransitions.master_scale_height), vis.height - (70*svgTransitions.master_scale_height)], //riverbank
         ] // <-- access is [city, trees, water fill, animated wave surface crest, animated river top, riverbank] <-- [bottom X, top X]
 
         vis.svg.select('#backgroundCity4')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[0][1] + "), rotate(0), scale(1.5,0.9)");
+            .attr("transform", 'translate(0,' + vis.background_transitions_Y[0][1] + ') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.9*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundTrees4')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[1][1] + "), rotate(0), scale(1.5,1)")
+            .attr("transform", 'translate(0,' + vis.background_transitions_Y[1][1] + ') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundWater4')
             .append('rect')
@@ -86,29 +91,21 @@ class ahaSlideGraphics {
             .attr('opacity', 1.0)
             .attr("x", 0)
             .attr("y", vis.background_transitions_Y[2][1])
-            .attr("height", vis.height - 200)
+            .attr("height", (vis.height - 200)*svgTransitions.master_scale_height)
             .attr("width", vis.width)
 
         //Create river top surface color
         vis.svg.select("#backgroundRiverAnimationWaveCrest4")
-            .append('path')
-            // .attr('class', 'parallax-single')
-            .attr('fill', 'blue')//starting color
             .attr("opacity", 1.0)
-            .attr("d", vis.svgPaths[0].path)
-            .attr("transform", 'translate(0,' + vis.background_transitions_Y[3][1] + ') rotate(0), scale(12,1.4)');
+            .attr("transform", 'translate(0,' + vis.background_transitions_Y[3][1] + '), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         //Create river shape animation
         vis.svg.select("#backgroundRiverAnimationWave4")
-            .append('path')
-            // .attr('class', 'parallax-single')
-            .attr('fill', 'lightblue')//starting color
             .attr("opacity", 1.0)
-            .attr("d", vis.svgPaths[0].path)
-            .attr("transform", 'translate(0,' + vis.background_transitions_Y[4][1] + ') rotate(0), scale(12,1.4)');
+            .attr("transform", 'translate(0,' + vis.background_transitions_Y[4][1] + '), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverbank4')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[5][1] + "), rotate(0), scale(1.5,1)");
+            .attr("transform", 'translate(0,' + vis.background_transitions_Y[5][1] + '), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
     }
 
@@ -121,22 +118,22 @@ class ahaSlideGraphics {
         vis.svg.select('#backgroundCity4')
             .transition()
             .duration(4000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][0]+"), rotate(0), scale(1.5,0.9)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[0][0]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.9*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundTrees4')
             .transition()
             .duration(3500)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][0]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[1][0]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverAnimationWaveCrest4')
             .transition()
             .duration(3200)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][0]+"), rotate(0), scale(1,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[3][0]+'), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverAnimationWave4')
             .transition()
             .duration(3000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][0]+"), rotate(0), scale(1,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[4][0]+'), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('rect') // #backgroundWater
             .transition()
@@ -146,7 +143,7 @@ class ahaSlideGraphics {
         vis.svg.select('#backgroundRiverbank4')
             .transition()
             .duration(2000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][0]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[5][0]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
         //select narrator box
         d3.select("#narraratorBalloonBox")
@@ -217,22 +214,22 @@ class ahaSlideGraphics {
         vis.svg.select('#backgroundCity4')
             .transition()
             .duration(2500)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][1]+"), rotate(0), scale(1.5,0.9)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[0][1]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.9*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundTrees4')
             .transition()
             .duration(2600)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][1]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[1][1]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverAnimationWaveCrest4')
             .transition()
             .duration(2700)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][1]+"), rotate(0), scale(1,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[3][1]+'), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverAnimationWave4')
             .transition()
             .duration(2800)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][1]+"), rotate(0), scale(1,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[4][1]+'), rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(0.15*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('rect') // #backgroundWater
             .transition()
@@ -242,7 +239,7 @@ class ahaSlideGraphics {
         vis.svg.select('#backgroundRiverbank4')
             .transition()
             .duration(3000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][1]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", 'translate(0,'+vis.background_transitions_Y[5][1]+') rotate(0), scale('+(1.5*svgTransitions.master_scale_width)+','+(1*svgTransitions.master_scale_height)+')');
 
         vis.updateVis();
 

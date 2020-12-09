@@ -15,6 +15,14 @@ class simulationSVGTransitions {
     initVis() {
         let vis = this;
 
+        vis.full_width = $("#" + vis.parentElement).width();
+        vis.full_height = $("#" + vis.parentElement).height();
+
+        vis.master_scale_width = vis.full_width / original_screen_format.width;
+        vis.master_scale_height = vis.full_height / original_screen_format.height;
+
+        console.log("Foreground Effects Scaling:", vis.master_scale_width, vis.master_scale_height);
+
         vis.margin = {top: 0, right: 0, bottom: 0, left: 0};
 
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
@@ -37,10 +45,15 @@ class simulationSVGTransitions {
             .attr('fill', 'blue')//starting color
             .attr("opacity", vis.displayData[0].opacity)
             .attr("d", vis.displayData[0].path)
-            .attr("transform", 'translate('+(vis.displayData[0].positionX)+','+(vis.displayData[0].positionY)+') rotate('+(vis.displayData[0].rotation)+') scale('+(vis.displayData[0].scaleX)+','+(vis.displayData[0].scaleY)+')')
+            .attr("transform", 'translate('+(vis.displayData[0].positionX * vis.master_scale_width)+','+(vis.displayData[0].positionY * vis.master_scale_height)+') rotate('+(vis.displayData[0].rotation)+') scale('+(vis.displayData[0].scaleX * vis.master_scale_width)+','+(vis.displayData[0].scaleY * vis.master_scale_height)+')')
 
 
         document.getElementById("sim-container").style.height= "100vh";
+
+        //scale the SVG foreground wave form
+
+        let original_wave_box_size = {minx: 0, miny: 24, width: 150, height: 45};
+        document.getElementsByClassName("waves");
 
     }
 
@@ -116,8 +129,8 @@ class simulationSVGTransitions {
             vis.svg.select("#riverShape")
                 .transition()
                 .duration(2500)
-                .attr("transform", 'translate(590,90) rotate(0) scale(0.4,-0.4)')
-                .style('fill', '#B49C97')
+                .attr("transform", 'translate(' + (590 * vis.master_scale_width) + ',' + (90 * vis.master_scale_height) + ') rotate(0) scale(' + (0.4 * vis.master_scale_width) + ',' + (-0.4* vis.master_scale_height) + ')')
+                .style('fill', '#B49C97');
         }
 
 
@@ -138,7 +151,7 @@ class simulationSVGTransitions {
                 .duration(2500)
                 .style('fill', 'blue')
                 .attr("d", vis.displayData[0].path)
-                .attr("transform", 'translate('+(vis.displayData[0].positionX)+','+(vis.displayData[0].positionY)+') rotate('+(vis.displayData[0].rotation)+') scale('+(vis.displayData[0].scaleX)+','+(vis.displayData[0].scaleY)+')')
+                .attr("transform", 'translate('+(vis.displayData[0].positionX * vis.master_scale_width)+','+(vis.displayData[0].positionY * vis.master_scale_height)+') rotate('+(vis.displayData[0].rotation)+') scale('+(vis.displayData[0].scaleX * vis.master_scale_width)+','+(vis.displayData[0].scaleY * vis.master_scale_height)+')')
         }
 
     }
@@ -166,8 +179,8 @@ class simulationSVGTransitions {
             vis.svg.select("#riverShape")
                 .transition()
                 .duration(2500)
-                .attr("transform", 'translate(1390,60) rotate(25) scale(0.8,-0.8)')
-                .style('fill', 'darkgreen')
+                .attr("transform", 'translate('+(1390*vis.master_scale_width)+','+(60*vis.master_scale_height)+') rotate(25) scale('+(0.8*vis.master_scale_width)+','+(-0.8*vis.master_scale_height)+')')
+                .style('fill', 'darkgreen');
 
             document.getElementById("slide0background").style.opacity = "0";
        }
@@ -186,7 +199,7 @@ class simulationSVGTransitions {
             vis.svg.select("#riverShape")
                 .transition()
                 .duration(2500)
-                .attr("transform", 'translate(590,90) rotate(0) scale(0.4,-0.4)')
+                .attr("transform", 'translate('+(590*vis.master_scale_width)+','+(90*vis.master_scale_height)+') rotate(0) scale('+(0.4*vis.master_scale_width)+','+(-0.4*vis.master_scale_height)+')')
                 .style('fill', '#B49C97')
         }
 
@@ -214,7 +227,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(4200)
                 .attr("d", vis.displayData[0].path)
-                .attr("transform", 'translate(5100, -2725) rotate(38) scale(10.8,-10.8)')
+                .attr("transform", 'translate('+(5100*vis.master_scale_width)+', '+(-2725*vis.master_scale_height)+') rotate(38) scale('+(10.8*vis.master_scale_width)+','+(-10.8*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             setTimeout(function () {
@@ -240,7 +253,7 @@ class simulationSVGTransitions {
                     .transition()
                     .duration(1)
                     .attr("d", vis.displayData[1].path)
-                    .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                    .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                     .attr("opacity","0")
 
                 document.getElementById("slide0background").style.opacity = "1";
@@ -272,13 +285,13 @@ class simulationSVGTransitions {
 
             vis.svg.select("#riverShape")
                 .attr("d", vis.displayData[0].path)
-                .attr("transform", 'translate(3200, -250) rotate(38) scale(3.8,-3.8)')
+                .attr("transform", 'translate('+(3200*vis.master_scale_width)+', '+(-250*vis.master_scale_height)+') rotate(38) scale('+(3.8*vis.master_scale_width)+','+(-3.8*vis.master_scale_height)+')')
 
 
             vis.svg.select("#riverShape")
                 .transition()
                 .duration(4000)
-                .attr("transform", 'translate(1390,60) rotate(25) scale(0.8,-0.8)')
+                .attr("transform", 'translate('+(1390*vis.master_scale_width)+','+(60*vis.master_scale_height)+') rotate(0) scale('+(0.8*vis.master_scale_width)+','+(-0.8*vis.master_scale_height)+')')
                 .style('fill', 'darkgreen')
         }
 
@@ -316,7 +329,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -340,7 +353,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             //transition fish nar
@@ -377,7 +390,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -401,7 +414,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -435,7 +448,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -455,7 +468,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -726,7 +739,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -746,7 +759,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -783,7 +796,7 @@ class simulationSVGTransitions {
                     .transition()
                     .duration(4200)
                     .attr("d", vis.displayData[0].path)
-                    .attr("transform", 'translate(3200, -250) rotate(38) scale(3.8,-3.8)')
+                    .attr("transform", 'translate('+(3200*vis.master_scale_width)+','+(-250*vis.master_scale_height)+') rotate(38) scale('+(3.8*vis.master_scale_width)+','+(-3.8*vis.master_scale_height)+')')
                     .style('fill', 'lightblue')
                     .transition(2900)
                     .style("opacity","0")
@@ -798,7 +811,7 @@ class simulationSVGTransitions {
                     .transition()
                     .duration(1)
                     .attr("d", vis.displayData[1].path)
-                    .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                    .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                     .attr("opacity","1")
 
             }, 2700);
@@ -823,9 +836,8 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
-
         }
 
 
@@ -855,12 +867,12 @@ class simulationSVGTransitions {
 
         vis.svg.select("#riverShape")
             .attr("d", vis.displayData[0].path)
-            .attr("transform", 'translate(3200, -250) rotate(38) scale(3.8,-3.8)')
+            .attr("transform", 'translate('+(3200*vis.master_scale_width)+','+(-250*vis.master_scale_height)+') rotate(38) scale('+(3.8*vis.master_scale_width)+','+(-3.8*vis.master_scale_height)+')')
 
         vis.svg.select("#riverShape")
             .transition()
             .duration(3500)
-            .attr("transform", 'translate(200,275) rotate(2) scale(0.22,-0.22)')
+            .attr("transform", 'translate('+(200*vis.master_scale_width)+','+(275*vis.master_scale_height)+') rotate(2) scale('+(0.22*vis.master_scale_width)+','+(-0.22*vis.master_scale_height)+')')
             .style('fill', 'blue')
             .transition()
             .duration(1000)
@@ -897,7 +909,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style("opacity","0.95")
                 .style('fill', 'lightblue')
 
@@ -924,7 +936,7 @@ class simulationSVGTransitions {
                     .transition()
                     .duration(4200)
                     .attr("d", vis.displayData[0].path)
-                    .attr("transform", 'translate(3200, -250) rotate(38) scale(3.8,-3.8)')
+                    .attr("transform", 'translate('+(3200*vis.master_scale_width)+','+(-250*vis.master_scale_height)+') rotate(38) scale('+(3.8*vis.master_scale_width)+','+(-3.8*vis.master_scale_height)+')')
                     .style('fill', 'lightblue')
                     .transition(2900)
                     .style("opacity","0")
@@ -934,14 +946,6 @@ class simulationSVGTransitions {
                 //code executed after 3.9 seconds
                 // Resize the part of screen the svg dom has command over
                 document.getElementById("sim-container").style.height = "20vh";
-
-                // vis.svg.select("#riverShape")
-                //     .transition()
-                //     .duration(1)
-                //     .attr("d", vis.displayData[1].path)
-                //     .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
-                //     .style('fill', 'lightblue')
-                //     .style("opacity","1.0")
 
                 //force element opacity for river animation
                 document.getElementById("riverShape").style.opacity = "0";
@@ -979,14 +983,15 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(0)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-450) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
+                // .attr("transform", 'translate(-300,-450) rotate(0) scale(12,4)')
                 .style('fill', 'lightblue')
                 .style("opacity","0")
 
             vis.svg.select("#riverShape")
                 .transition()
                 .duration(1000)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style("opacity","0")
         }
 
@@ -1002,9 +1007,9 @@ class simulationSVGTransitions {
             vis.svg.append("rect")
                 .attr("id", "riverWaterFill")
                 .attr("x", "0")
-                .attr("y", "1050")
-                .attr("height", 300)
-                .attr("width", 2000)
+                .attr("y", 1050 * vis.master_scale_height)
+                .attr("height", 300 * vis.master_scale_height)
+                .attr("width", 2000 * vis.master_scale_width)
                 .style('fill', 'lightblue');
 
             vis.svg.append("path")
@@ -1012,7 +1017,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(100, 700) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(700*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style("opacity", "1")
                 .style('fill', 'blue');
 
@@ -1021,7 +1026,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(100, 710) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(710*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style("opacity", "1")
                 .style('fill', 'lightblue');
 
@@ -1029,7 +1034,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(100, 710) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(710*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style("opacity", "1")
                 .style('fill', 'lightblue');
 
@@ -1039,7 +1044,7 @@ class simulationSVGTransitions {
                     .transition()
                     .transition()
                     .duration(4000)
-                    .attr("transform", 'translate(100, 450) rotate(0) scale(12,4)')
+                    .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(450*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                     .style('fill', 'lightblue')
                     .style('opacity', "1")
 
@@ -1047,7 +1052,7 @@ class simulationSVGTransitions {
                     .transition()
                     .transition()
                     .duration(4000)
-                    .attr("transform", 'translate(100, 440) rotate(0) scale(12,4)')
+                    .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(440*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                     .style('fill', 'blue')
                     .style('opacity', "1")
 
@@ -1055,14 +1060,14 @@ class simulationSVGTransitions {
                     .transition()
                     .transition()
                     .duration(4000)
-                    .attr("transform", 'translate(100, 450) rotate(0) scale(12,4)')
+                    .attr("transform", 'translate('+(100*vis.master_scale_width)+','+(450*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                     .style('fill', 'lightblue')
                     .style('opacity', "1")
 
                 vis.svg.select("#riverWaterFill")
                     .transition()
                     .duration(4000)
-                    .attr("transform", 'translate(0,-350)') //1050
+                    .attr("transform", 'translate('+(0*vis.master_scale_width)+','+(-350*vis.master_scale_height)+')') //1050
                     .style('fill', 'lightblue')
                     .style('opacity', "1")
             }, 10);
@@ -1115,7 +1120,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -1141,7 +1146,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             console.log("--------")
@@ -1164,7 +1169,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(1000)
                 .attr("d", vis.displayData[1].path)
-                .attr("transform", 'translate(-300,-50) rotate(0) scale(12,4)')
+                .attr("transform", 'translate('+(-300*vis.master_scale_width)+','+(-50*vis.master_scale_height)+') rotate(0) scale('+(12*vis.master_scale_width)+','+(4*vis.master_scale_height)+')')
                 .style('fill', 'lightblue')
 
             ahaCard.transitionBackgroundExit();
@@ -1173,53 +1178,6 @@ class simulationSVGTransitions {
             console.log("--------")
         }
     }
-
-    // card5Transition(direction) {
-    //     let vis = this;
-    //
-    //     if (direction === 'down') {
-    //         console.log("Arrived on Slide 5! From Above")
-    //
-    //         document.getElementById("animatedWavesContainer").style.opacity = "0";
-    //
-    //         document.getElementById("sim-container").style.height = "100vh";
-    //
-    //         vis.svg.select("#riverShape")
-    //             .transition()
-    //             .duration(5000)
-    //             .attr("d", vis.displayData[0].path)
-    //             .attr("transform", 'translate(-40, -500) rotate(20) scale(0.52,-0.52)')
-    //             .style('fill', 'blue')
-    //             .style('opacity', "0.25")
-    //
-    //         setTimeout(function () {
-    //             //fade river out
-    //             vis.svg.select("#riverShape")
-    //                 .transition()
-    //                 .duration(6000)
-    //                 .style('opacity', "0.15")
-    //         }, 6000);
-    //     }
-    //
-    //
-    //     if (direction === 'up') {
-    //         console.log("Arrived on Slide 5! From Below")
-    //
-    //         document.getElementById("animatedWavesContainer").style.opacity = "0";
-    //
-    //         document.getElementById("sim-container").style.height= "100vh";
-    //
-    //         // //transition river shape to new pattern
-    //         vis.svg.select("#riverShape")
-    //             .transition()
-    //             .duration(4000)
-    //             .attr("d", vis.displayData[0].path)
-    //             .attr("transform", 'translate(-1500, -1300) rotate(20) scale(0.92, -0.92)')
-    //             .style('fill', 'blue')
-    //             .style('opacity', "0.25")
-    //     }
-    //
-    // }
 
 
     ahaCardTransitionExit(direction) {
@@ -1263,7 +1221,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(4000)
                 .attr("d", vis.displayData[0].path)
-                .attr("transform", 'translate(-1500, -1300) rotate(20) scale(0.92, -0.92)')
+                .attr("transform", 'translate('+(-1500*vis.master_scale_width)+','+(-1300*vis.master_scale_height)+') rotate(20) scale('+(0.92*vis.master_scale_width)+','+(-0.92*vis.master_scale_height)+')')
                 .style('fill', 'blue')
                 .style('opacity', "0.15")
 
@@ -1290,7 +1248,7 @@ class simulationSVGTransitions {
                 .transition()
                 .duration(4000)
                 .attr("d", vis.displayData[0].path)
-                .attr("transform", 'translate(-1500, -1300) rotate(20) scale(0.92, -0.92)')
+                .attr("transform", 'translate('+(-1500*vis.master_scale_width)+','+(-1300*vis.master_scale_height)+') rotate(20) scale('+(0.92*vis.master_scale_width)+','+(-0.92*vis.master_scale_height)+')')
                 .style('fill', 'blue')
                 .style('opacity', "0.25")
 

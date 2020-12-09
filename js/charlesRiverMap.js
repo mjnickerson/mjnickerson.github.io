@@ -72,7 +72,7 @@ class charlesRiverMap {
             .style('fill', vis.displayData[2].color)
             .attr('opacity', vis.displayData[2].opacity)
             .attr("d", vis.displayData[2].path)
-            .attr("transform", 'translate('+(vis.displayData[2].positionX)+','+(vis.displayData[2].positionY)+') rotate('+(vis.displayData[2].rotation)+') scale('+(vis.displayData[2].scaleX)+','+(vis.displayData[2].scaleY)+')')
+            .attr("transform", 'translate('+(vis.displayData[2].positionX*svgTransitions.master_scale_width)+','+(vis.displayData[2].positionY*svgTransitions.master_scale_height)+') rotate('+(vis.displayData[2].rotation)+') scale('+(vis.displayData[2].scaleX*svgTransitions.master_scale_width)+','+(vis.displayData[2].scaleY*svgTransitions.master_scale_height)+')')
 
 
         vis.svg.selectAll("#interactiveMapGroup")
@@ -105,7 +105,7 @@ class charlesRiverMap {
             .style('fill', vis.displayData[3].color)
             .attr('opacity', vis.displayData[3].opacity)
             .attr("d", vis.displayData[3].path)
-            .attr("transform", 'translate('+(vis.displayData[3].positionX)+','+(vis.displayData[3].positionY)+') rotate('+(vis.displayData[3].rotation)+') scale('+(vis.displayData[3].scaleX)+','+(vis.displayData[3].scaleY)+')')
+            .attr("transform", 'translate('+(vis.displayData[3].positionX*svgTransitions.master_scale_width)+','+(vis.displayData[3].positionY*svgTransitions.master_scale_height)+') rotate('+(vis.displayData[3].rotation)+') scale('+(vis.displayData[3].scaleX*svgTransitions.master_scale_width)+','+(vis.displayData[3].scaleY*svgTransitions.master_scale_height)+')')
 
         vis.svg.selectAll("#interactiveMapGroup")
             .append('path')
@@ -137,7 +137,7 @@ class charlesRiverMap {
             .style('fill', vis.displayData[4].color)
             .attr('opacity', vis.displayData[4].opacity)
             .attr("d", vis.displayData[4].path)
-            .attr("transform", 'translate('+(vis.displayData[4].positionX)+','+(vis.displayData[4].positionY)+') rotate('+(vis.displayData[4].rotation)+') scale('+(vis.displayData[4].scaleX)+','+(vis.displayData[4].scaleY)+')')
+            .attr("transform", 'translate('+(vis.displayData[4].positionX*svgTransitions.master_scale_width)+','+(vis.displayData[4].positionY*svgTransitions.master_scale_height)+') rotate('+(vis.displayData[4].rotation)+') scale('+(vis.displayData[4].scaleX*svgTransitions.master_scale_width)+','+(vis.displayData[4].scaleY*svgTransitions.master_scale_height)+')')
 
         vis.svg.selectAll("#interactiveMapGroup")
             .append('path')
@@ -172,7 +172,7 @@ class charlesRiverMap {
             .style('fill', vis.displayData[5].color)
             .attr('opacity', vis.displayData[5].opacity)
             .attr("d", vis.displayData[5].path)
-            .attr("transform", 'translate('+(vis.displayData[5].positionX)+','+(vis.displayData[5].positionY)+') rotate('+(vis.displayData[5].rotation)+') scale('+(vis.displayData[5].scaleX)+','+(vis.displayData[5].scaleY)+')')
+            .attr("transform", 'translate('+(vis.displayData[5].positionX*svgTransitions.master_scale_width)+','+(vis.displayData[5].positionY*svgTransitions.master_scale_height)+') rotate('+(vis.displayData[5].rotation)+') scale('+(vis.displayData[5].scaleX*svgTransitions.master_scale_width)+','+(vis.displayData[5].scaleY*svgTransitions.master_scale_height)+')')
 
     }
 

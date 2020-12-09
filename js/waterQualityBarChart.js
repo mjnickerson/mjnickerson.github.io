@@ -27,7 +27,7 @@ class waterQualityBarChart {
         vis.margin = { top: 22, right: 30, bottom: 40, left: 105 };
 
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-        vis.height = 400 - vis.margin.top - vis.margin.bottom;
+        vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
 
         // SVG drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -71,22 +71,22 @@ class waterQualityBarChart {
 
         // add title
         vis.svg.append('g')
-            .attr('class', 'title bar-title')
             .append('text')
+            .attr('class', 'title bar-label')
             .text("River Bacteria Levels")
             .attr('transform', `translate(${vis.width / 2}, -10)`)
             .attr('text-anchor', 'middle');
 
         vis.svg.append('g')
-            .attr('class', 'x-axis ecoli-axis-label')
             .append('text')
+            .attr('class', 'x-axis ecoli-axis-label')
             .text("Year")
             .attr('transform', `translate(${vis.width / 2}, ${vis.height + 35})`)
             .attr('text-anchor', 'middle')
       
         vis.svg.append('g')
-            .attr('class', 'y-axis ecoli-axis-label')
             .append('text')
+            .attr('class', 'y-axis ecoli-axis-label')
             .text("Average E. coli or Fecal coliform Level (#/100mL)")
             .attr('transform', `translate(-55, ${vis.height / 2}) rotate(-90)`)
             .attr('text-anchor', 'middle');
@@ -379,13 +379,13 @@ class waterQualityBarChart {
 
         ///DRAW ECOLI READINGS
         // Draw rectangles: Bars
-        vis.bars = vis.svg.selectAll(".bar")
+        vis.bars = vis.svg.selectAll(".ecoli-bar")
             .data(vis.displayData, function (d) { return d.year })
 
         //BARS: ENTER
         vis.bars.enter().append("rect")
             .merge(vis.bars) //UPDATE
-            .attr("class", "bar")
+            .attr("class", "ecoli-bar")
             .on('mouseover', function(event, d){  /// TOOLTIP FUNCTIONALITY
                 d3.select(this)
                     .attr('stroke-width', '2px')

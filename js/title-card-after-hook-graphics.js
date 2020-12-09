@@ -27,7 +27,7 @@ class titleCardAfterHookGraphics {
         vis.swimmer = d3.select(`#${vis.swimmerContainer}`)
             .append("svg")
             .attr("width", $(`#${vis.swimmerContainer}`).width())
-            .attr("height", $(`#${vis.swimmerContainer}`).height())
+            .attr("height", $(`#${vis.swimmerContainer}`).height() - (10 * svgTransitions.master_scale_height))
             .append("g").attr("id", "cso-cloud-bg");
 
 
@@ -55,13 +55,16 @@ class titleCardAfterHookGraphics {
             d3.xml('data/title-card-back-drop-city.svg'),
             d3.xml('data/title-card-back-drop-trees.svg'),
             d3.xml('data/title-card-back-drop-riverbank.svg'),
-
+            d3.xml('data/riverwavecrest-blue.svg'),
+            d3.xml('data/riverwavecrest-lightblue.svg'),
         ];
         Promise.all(svg_promises_background)
-            .then(([cityVar, treesVar, riverbankVar]) => {
+            .then(([cityVar, treesVar, riverbankVar, riverCrestVar, riverWaveVar]) => {
                 d3.select("#backgroundCity3").node().append(cityVar.documentElement);
                 d3.select("#backgroundTrees3").node().append(treesVar.documentElement);
                 d3.select("#backgroundRiverbank3").node().append(riverbankVar.documentElement);
+                d3.select("#backgroundRiverAnimationWaveCrest3").node().append(riverCrestVar.documentElement);
+                d3.select("#backgroundRiverAnimationWave3").node().append(riverWaveVar.documentElement);
             });
 
         //empty layers for background containers
@@ -86,19 +89,19 @@ class titleCardAfterHookGraphics {
             .style('opacity', 1.0)
 
         //the y heights for each anchor of the transitions
-        vis.background_transitions_Y = [[vis.height - 255, vis.height - 890], //city
-            [vis.height - 200, vis.height - 815], //trees
-            [vis.height + 20, vis.height - 655], //water fill
-            [vis.height - 300, (vis.height - 760)], //animated wave surface crest
-            [vis.height - 300, vis.height - 750], //animated river top
-            [vis.height + 20, vis.height - 70], //riverbank
+        vis.background_transitions_Y = [[vis.height - (255*svgTransitions.master_scale_height), vis.height - (890*svgTransitions.master_scale_height)], //city
+            [vis.height - (200*svgTransitions.master_scale_height), vis.height - (815*svgTransitions.master_scale_height)], //trees
+            [vis.height + (20*svgTransitions.master_scale_height), vis.height - (655*svgTransitions.master_scale_height)], //water fill
+            [vis.height - (95*svgTransitions.master_scale_height), (vis.height - (730*svgTransitions.master_scale_height))], //animated wave surface crest
+            [vis.height - (85*svgTransitions.master_scale_height), vis.height - (720*svgTransitions.master_scale_height)], //animated river top
+            [vis.height + (20*svgTransitions.master_scale_height), vis.height - (70*svgTransitions.master_scale_height)], //riverbank
         ] // <-- access is [city, trees, water fill, animated wave surface crest, animated river top, riverbank] <-- [bottom X, top X]
 
         vis.svg.select('#backgroundCity3')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[0][1] + "), rotate(0), scale(1.5,0.9)");
+            .attr("transform", "translate(0," + vis.background_transitions_Y[0][1] + "), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.9*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundTrees3')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[1][1] + "), rotate(0), scale(1.5,1)")
+            .attr("transform", "translate(0," + vis.background_transitions_Y[1][1] + "), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")")
 
         vis.svg.select('#backgroundWater3')
             .append('rect')
@@ -106,29 +109,33 @@ class titleCardAfterHookGraphics {
             .attr('opacity', 1.0)
             .attr("x", 0)
             .attr("y", vis.background_transitions_Y[2][1])
-            .attr("height", vis.height - 200)
+            .attr("height", vis.height - (200*svgTransitions.master_scale_height))
             .attr("width", vis.width)
 
         //Create river top surface color
         vis.svg.select("#backgroundRiverAnimationWaveCrest3")
-            .append('path')
-            // .attr('class', 'parallax-single')
-            .attr('fill', 'blue')//starting color
-            .attr("opacity", 1.0)
-            .attr("d", vis.svgPaths[0].path)
-            .attr("transform", 'translate(0,' + vis.background_transitions_Y[3][1] + ') rotate(0), scale(12,1.4)');
+            .attr("transform", "translate(0," + vis.background_transitions_Y[3][1] + "), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
+
+        // .append('path')
+            // // .attr('class', 'parallax-single')
+            // .attr('fill', 'blue')//starting color
+            // .attr("opacity", 1.0)
+            // .attr("d", vis.svgPaths[0].path)
+            // .attr("transform", 'translate(0,' + vis.background_transitions_Y[3][1] + ') rotate(0), scale('+(12*svgTransitions.master_scale_width)+','+(1.4*svgTransitions.master_scale_height)+')');
 
         //Create river shape animation
         vis.svg.select("#backgroundRiverAnimationWave3")
-            .append('path')
-            // .attr('class', 'parallax-single')
-            .attr('fill', 'lightblue')//starting color
-            .attr("opacity", 1.0)
-            .attr("d", vis.svgPaths[0].path)
-            .attr("transform", 'translate(0,' + vis.background_transitions_Y[4][1] + ') rotate(0), scale(12,1.4)');
+            .attr("transform", "translate(0," + vis.background_transitions_Y[4][1] + "), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
+
+        // .append('path')
+            // // .attr('class', 'parallax-single')
+            // .attr('fill', 'lightblue')//starting color
+            // .attr("opacity", 1.0)
+            // .attr("d", vis.svgPaths[0].path)
+            // .attr("transform", 'translate(0,' + vis.background_transitions_Y[4][1] + ') rotate(0), scale('+(12*svgTransitions.master_scale_width)+','+(1.4*svgTransitions.master_scale_height)+')');
 
         vis.svg.select('#backgroundRiverbank3')
-            .attr("transform", "translate(0," + vis.background_transitions_Y[5][1] + "), rotate(0), scale(1.5,1)");
+            .attr("transform", "translate(0," + vis.background_transitions_Y[5][1] + "), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")");
 
 
 
@@ -171,22 +178,22 @@ class titleCardAfterHookGraphics {
         vis.svg.select('#backgroundCity3')
             .transition()
             .duration(4000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][0]+"), rotate(0), scale(1.5,0.9)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][0]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.9*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundTrees3')
             .transition()
             .duration(3500)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][0]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][0]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundRiverAnimationWaveCrest3')
             .transition()
             .duration(3200)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][0]+"), rotate(0), scale(1,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][0]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundRiverAnimationWave3')
             .transition()
             .duration(3000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][0]+"), rotate(0), scale(1,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][0]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('rect') // #backgroundWater
             .transition()
@@ -196,9 +203,9 @@ class titleCardAfterHookGraphics {
         vis.svg.select('#backgroundRiverbank3')
             .transition()
             .duration(2000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][0]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][0]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")");
 
-        vis.swimmer.transition().duration(20000).attr("transform", "translate(3000, 0)");
+        vis.swimmer.transition().duration(20000).attr("transform", "translate("+(3000*svgTransitions.master_scale_width)+",0)");
 
     }
 
@@ -210,23 +217,22 @@ class titleCardAfterHookGraphics {
         vis.svg.select('#backgroundCity3')
             .transition()
             .duration(2500)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][1]+"), rotate(0), scale(1.5,0.9)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[0][1]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.9*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundTrees3')
             .transition()
             .duration(2600)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][1]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[1][1]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundRiverAnimationWaveCrest3')
             .transition()
-            .duration(2700)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][1]+"), rotate(0), scale(1,1)");
+            .duration(3200)
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[3][1]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#backgroundRiverAnimationWave3')
             .transition()
-            .duration(2800)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][1]+"), rotate(0), scale(1,1)");
-
+            .duration(3000)
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[4][1]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(0.15*svgTransitions.master_scale_height)+")");
         vis.svg.select('rect') // #backgroundWater
             .transition()
             .duration(2900)
@@ -235,9 +241,9 @@ class titleCardAfterHookGraphics {
         vis.svg.select('#backgroundRiverbank3')
             .transition()
             .duration(3000)
-            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][1]+"), rotate(0), scale(1.5,1)");
+            .attr("transform", "translate(0,"+vis.background_transitions_Y[5][1]+"), rotate(0), scale("+(1.5*svgTransitions.master_scale_width)+","+(1*svgTransitions.master_scale_height)+")");
 
-        vis.swimmer.transition().duration(0).attr("transform", "translate(0, 0)");
+        vis.swimmer.transition().duration(0).attr("transform", "translate(0, "+(0*svgTransitions.master_scale_height)+")");
 
         document.getElementById("animatedWavesContainer").style.opacity = "100";
         document.getElementById("animatedWavesContainer-BROWN").style.opacity = "0";

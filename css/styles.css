@@ -19,6 +19,7 @@
 
 body {
     color: white;
+    font-size: 1.75vh;
 }
 
 
@@ -29,7 +30,7 @@ h1{
     /*font-family: 'Permanent Marker', cursive;*/
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 900;
-    font-size: 5em;
+    font-size: 9vh;
     /*-webkit-text-shadow: 0 .3rem .9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
     /*text-shadow: 0 0.3rem 0.9rem rgba(0,0,0,.5); !*Master text drop shadow*!*/
     letter-spacing: -3px;
@@ -55,7 +56,7 @@ h4{
 
 
 p {
-    font-size: 2em;
+    font-size: 3vh;
     color: #fff;
     font-family: 'Source Sans Pro', sans-serif;
     /*text-shadow: -1px 1px 8px rgba(0,0,0,.8);*/
@@ -66,7 +67,7 @@ table {
 }
 
 label {
-    color: black;
+    color: grey;
 }
 
 .button {
@@ -86,6 +87,15 @@ a {
 }
 
 /*****************/
+/*ENTIRE SCREEN  */
+/*****************/
+
+#entireSiteContainer {
+    /*width: 2560px;*/
+    /*height: 1600px;*/
+}
+
+/*****************/
 /*GENERIC CLASSES*/
 /*****************/
 
@@ -101,31 +111,31 @@ a {
     opacity: 0;
 }
 
-.emptyWaterBlock{
-
+.btn {
+    font-size: 1.8vh;
 }
 
 .slideSpacer50 {
-    height: 50px;
+    height: 5vh;
 }
 
 .slideSpacer70 {
-    height: 70px;
+    height: 6.66vh;
 }
 
 .blankHorizontal50 {
-    width: 50px;
+    width: 3vw;
 }
 
 .blankHorizontal70 {
-    width: 70px;
+    width: 4.3vw;
 }
 
 .slideTitle {
     color: #fff;
     width: 100%;
     position: absolute;
-    top: 15%;
+    top: 15vh;
 }
 
 .slideTitleHigh {
@@ -136,21 +146,21 @@ a {
 .subjectHeading {
     color: black;
     font-weight: bold;
-    font-size: 35px;
-    margin-bottom: 15px;
+    font-size: 3.8vh;
+    margin-bottom: 1.5vh;
 }
 
 .subjectDetailText {
     color: black;
-    font-size: 20px;
+    font-size: 2.2vh;
     text-align: left;
 }
 
 .backgroundTransparentWhiteFill
 {
     background-color: rgba(255, 255, 255, 0.70);
-    padding: 30px;
-    margin: 10px;
+    padding: 3.3vh;
+    margin: 1.2vh;
     border-radius: 10px;
     /*border: thin solid grey;*/
 }
@@ -158,8 +168,8 @@ a {
 .backgroundTransparentWhiteFillNoMargin
 {
     background-color: rgba(255, 255, 255, 0.70);
-    padding: 0px;
-    margin: 0px;
+    padding: 0vh;
+    margin: 0vh;
     border-radius: 10px;
     /*border: thin solid grey;*/
 }
@@ -194,7 +204,7 @@ a {
 
 /*GENERIC CHART COMPONENTS*/
 .axis {
-    font-size: 12px;
+    font-size: 1.2vh;
     color: grey;
 }
 
@@ -210,13 +220,13 @@ a {
 
 .axis-label {
     color: grey;
-    font-size: 13px;
+    font-size: 1.3vh;
     text-anchor: middle;
 }
 
 .bar-axis-label {
     color: grey;
-    font-size: 13px;
+    font-size: 1.3vh;
     text-anchor: middle;
 }
 
@@ -343,8 +353,8 @@ a {
     width: 100%;
     height: 1vh;
     margin-bottom: 0px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
+    min-height:10vh;
+    max-height:15vh;
 }
 
 .waves-top-of-screen {
@@ -352,8 +362,8 @@ a {
     width: 100%;
     height: 0vh;
     margin-bottom: 0px; /*Fix for safari gap*/
-    min-height:90px;
-    max-height:140px;
+    min-height:9vh;
+    max-height:14vh;
 }
 
 .content {
@@ -634,10 +644,9 @@ a {
 }
 
 #card3Title {
-    font-size: 20px;
-    width: 200vh;
-    position: absolute;
-    top: 70vh;
+    font-size: 2.2vh;
+    position: relative;
+    top: 32vh;
     left: -10vh;
 }
 
@@ -672,7 +681,7 @@ a {
 
 .quizButtonNoImage {
     background: url('../img/DeadFishInBubble.png') no-repeat transparent;
-    background-size: 30vh 30vh;
+    background-size: 32vh 32vh;
 }
 
 #slide1A .fp-bg {
@@ -977,6 +986,8 @@ a {
 }
 
 #ecoliwaterqualitybarchart {
+    height: 47vh;
+    width: 100%;
     padding-top: 1vh;
     margin-top: 0vh;
     padding-bottom: 1vh;
@@ -986,7 +997,7 @@ a {
     position: absolute;
     text-align: center;
     font-family: 'Lato', sans-serif;
-    font-size: 12px;
+    font-size: 1.5vh;
     background: lightsteelblue;
     border-radius: 8px;
     /*  pointer-events: none;	This line needs to be removed */
@@ -995,27 +1006,36 @@ a {
 .ecoliBarCharttoolTipTitleFont {
     color: #d00202;
     font-family: 'Cinzel', serif;
-    font-size: 25px;
+    font-size: 2.7vh;
     font-weight: bold;
 }
 
 #ecoliwaterqualitybrushmap {
+    height: 25vh;
     width: 100%;
-    /*background-image: url('../img/charlesRiverStationMap.png');*/
-    /*background-size: 1140px 200px;*/
-    /*background-position: 77.5% 50%;*/
-    /*background-repeat: no-repeat;*/
+}
+
+
+.ecoli-bar-title {
+    font-size: 0.5vh;
+}
+
+#ecoliwaterqualitybarchart .bar-label {
+    font-size: 1.8vh;
 }
 
 .ecoli-axis-label {
-    font-size: 14px;
+    font-size: 1.5vh;
 }
 
 .stationCircleLabel {
-    font-size: 17px;
+    font-size: 1.5vh;
     font-weight: bold;
 }
 
+#ecoliToggleButtons .btn-success {
+    font-size: 1.8vh;
+}
 
 /*******************************/
 /*CSO STACK CHART SPECIFIC CLASSES*/
@@ -1058,23 +1078,23 @@ a {
 
 .tooltip-text{
     color: black;
-    font-size: 18px;
+    font-size: 2vh;
     font-weight: bold;
 }
 
 .tooltip-text1{
     color: black;
-    font-size: 16px;
+    font-size: 1.7vh;
 }
 
 .tooltip-text2{
     color: black;
-    font-size: 16px;
+    font-size: 1.7vh;
 }
 
 .tooltip-text3{
     color: black;
-    font-size: 16px;
+    font-size: 1.7vh;
 }
 
 .axis path,
@@ -1121,8 +1141,8 @@ a {
 }
 
 #swimmability-blurb-panel .subjectDetailText {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1.8vh;
+    margin-bottom: 2vh;
 }
 
 #swimmability-chart .month {
@@ -1295,7 +1315,7 @@ text.label {
     height: 100%;
     width: 100%;
     display: none;
-    font-size: 30px;
+    font-size: 3.3vh;
     padding-bottom: 2vh;
     color: black;
     font-weight: bold;
@@ -1521,7 +1541,7 @@ text.label {
 
 .river-health-description {
     color: black;
-    font-size: 25px;
+    font-size: 2.7vh;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -1602,7 +1622,7 @@ text.label {
     position:absolute;
     top: 37vh;
     left: 25vw;
-    width: 50vw;
+    width: 55vw;
     height: 30vh;
     padding: 10px;
     display:none;
@@ -1624,7 +1644,7 @@ text.label {
 
 #narraratorBalloonBox {
     position:absolute;
-    top: -4vh;
+    top: -10vh;
     left: 1vw;
     width: 5vw;
     height: 5vh;
@@ -1671,16 +1691,16 @@ text.label {
 
 #riverhealth-cloud-container{
     position: absolute;
-    top: 120px;
-    height: 150px;
+    top: 12vh;
+    height: 12vh;
     width: 100%;
     z-index: 0;
 }
 
 #fish1-container{
     position: absolute;
-    bottom: 0px;
-    height: 200px;
+    bottom: 5vh;
+    height: 20vh;
     width: 100%;
     z-index: 0;
 }
@@ -1696,8 +1716,8 @@ text.label {
 
 #swimmer-container{
     position: absolute;
-    bottom: 0px;
-    height: 150px;
+    bottom: 0.7vh;
+    height: 20vh;
     width: 100%;
     z-index: 0;
 }

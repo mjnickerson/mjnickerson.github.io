@@ -120,40 +120,40 @@ class interactiveDiagram {
 
         // moving icons to their locations
         vis.svg.select('#ecoliIcon')
-            .attr("transform", "translate(600,370), rotate(0), scale(0.30,0.30)");
+            .attr("transform", "translate("+(600*svgTransitions.master_scale_width)+","+(370*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.30*svgTransitions.master_scale_height)+","+(0.30*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#phosphorusIcon')
-            .attr("transform", "translate(1400,370), rotate(0), scale(0.45,0.45)");
+            .attr("transform", "translate("+(1400*svgTransitions.master_scale_width)+","+(370*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.45*svgTransitions.master_scale_height)+","+(0.45*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#temperatureIcon')
-            .attr("transform", "translate(1560,30), rotate(0), scale(0.20,0.20)");
+            .attr("transform", "translate("+(1560*svgTransitions.master_scale_width)+","+(30*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.20*svgTransitions.master_scale_height)+","+(0.20*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#rainfallIcon')
-            .attr("transform", "translate(270,30), rotate(0), scale(-0.45,0.45)");
+            .attr("transform", "translate("+(270*svgTransitions.master_scale_width)+","+(30*svgTransitions.master_scale_height)+"), rotate(0), scale("+(-0.45*svgTransitions.master_scale_height)+","+(0.45*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#wetlandsIcon')
-            .attr("transform", "translate(125,420), rotate(0), scale(0.30,0.30)");
+            .attr("transform", "translate("+(125*svgTransitions.master_scale_width)+","+(420*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.30*svgTransitions.master_scale_height)+","+(0.30*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#bigFishIcon')
-            .attr("transform", "translate(310,700), rotate(0), scale(0.30,0.45)");
+            .attr("transform", "translate("+(310*svgTransitions.master_scale_width)+","+(700*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.30*svgTransitions.master_scale_height)+","+(0.45*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#bigFishIconEatsArrow')
-            .attr("transform", "translate(520,730), rotate(0), scale(2,2)");
+            .attr("transform", "translate("+(520*svgTransitions.master_scale_width)+","+(730*svgTransitions.master_scale_height)+"), rotate(0), scale("+(2*svgTransitions.master_scale_width)+","+(2*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#smallFishIcon')
-            .attr("transform", "translate(750,730), rotate(0), scale(0.50,0.50)");
+            .attr("transform", "translate("+(750*svgTransitions.master_scale_width)+","+(730*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.50*svgTransitions.master_scale_height)+","+(0.50*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#smallFishIconEatsArrow')
-            .attr("transform", "translate(920,730), rotate(0), scale(2,2)");
+            .attr("transform", "translate("+(920*svgTransitions.master_scale_width)+","+(730*svgTransitions.master_scale_height)+"), rotate(0), scale("+(2*svgTransitions.master_scale_width)+","+(2*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#zooplanktonIcon')
-            .attr("transform", "translate(1270,685), rotate(70), scale(0.15,0.15)");
+            .attr("transform", "translate("+(1270*svgTransitions.master_scale_width)+","+(685*svgTransitions.master_scale_height)+"), rotate(70), scale("+(0.15*svgTransitions.master_scale_height)+","+(0.15*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#zooplanktonIconEatsArrow')
-            .attr("transform", "translate(1320,730), rotate(0), scale(2,2)");
+            .attr("transform", "translate("+(1320*svgTransitions.master_scale_width)+","+(730*svgTransitions.master_scale_height)+"), rotate(0), scale("+(2*svgTransitions.master_scale_width)+","+(2*svgTransitions.master_scale_height)+")");
 
         vis.svg.select('#cyanobacteriaIcon')
-            .attr("transform", "translate(1550,705), rotate(0), scale(0.22,0.22)");
+            .attr("transform", "translate("+(1550*svgTransitions.master_scale_width)+","+(705*svgTransitions.master_scale_height)+"), rotate(0), scale("+(0.22*svgTransitions.master_scale_height)+","+(0.22*svgTransitions.master_scale_height)+")");
 
         ////////// ADD DIAGRAM BUBBLES //////////////////
 
@@ -166,9 +166,9 @@ class interactiveDiagram {
             .attr("class", "hiddenBubbles")
             .attr('fill', 'orange')//starting color
             .attr('opacity', 0.40)
-            .attr("r", d=> d.bubbleRadius)
-            .attr("cx",d => d.bubblePointX)
-            .attr("cy",d => d.bubblePointY)
+            .attr("r", d=> d.bubbleRadius*svgTransitions.master_scale_height)
+            .attr("cx",d => d.bubblePointX*svgTransitions.master_scale_width)
+            .attr("cy",d => d.bubblePointY*svgTransitions.master_scale_height)
             .on('mouseover', function(event, d){  /// TOOLTIP FUNCTIONALITY
                 d3.select(this)
                     .attr('stroke-width', ' 10px')
