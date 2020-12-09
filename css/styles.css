@@ -999,7 +999,7 @@ a {
     font-family: 'Lato', sans-serif;
     font-size: 1.5vh;
     background: lightsteelblue;
-    border-radius: 8px;
+    border-radius: 0.8vh;
     /*  pointer-events: none;	This line needs to be removed */
 }
 
@@ -1055,21 +1055,21 @@ a {
 
 .cfo-tooltip {
     line-height: 1;
-    padding: 12px;
+    padding: 1.2vh;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
-    border-radius: 2px;
-    font-size: 12px;
+    border-radius: 0.2vh;
+    font-size: 1.2vh;
 }
 
 .cfo-y-label{
     fill: black;
-    font-size: 14px;
+    font-size: 1.4vh;
 }
 
 .cfo-x-label{
     fill: black;
-    font-size: 14px;
+    font-size: 1.4vh;
 }
 
 .cso-chart-text{
@@ -1106,7 +1106,7 @@ a {
 
 .cso-legend{
     fill: black;
-    font-size: 11px;
+    font-size: 1.1vh;
 
 }
 
@@ -1114,24 +1114,24 @@ a {
 /*SWIMMABILITY CHART SPECIFIC CLASSES*/
 /*******************************/
 #swimmability-panel h3 {
-    width: 680px;
+    width: 68vh;
     margin-bottom: 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 2.4vh;
 }
 
 #swimmability-chart {
-    width: 1300px;
-    height: 520px;
+    width: 130vh;
+    height: 52vh;
     color: black;
     position: relative;
 }
 
 #swimmability-blurb-panel {
-    width: 500px;
+    width: 50vh;
     position: absolute;
-    left: 800px;
-    font-size: 16px;
+    left: 80vh;
+    font-size: 1.6vh;
     z-index: 1;
 }
 
@@ -1169,12 +1169,12 @@ a {
 }
 
 #swimmability-chart .swimmable-text {
-    font-size: 16px;
+    font-size: 1.6vh;
     font-weight: bold;
 }
 
 #swimmable-legend {
-    margin-top: 50px;
+    margin-top: 5vh;
 }
 
 #swimmability-chart .swimmable-legend-row {
@@ -1185,14 +1185,14 @@ a {
 
 #swimmability-chart .swimmable-legend-cell {
     float: left;
-    height: 30px;
-    width: 30px;
+    height: 3vh;
+    width: 3vh;
 }
 
 #swimmability-chart .swimmable-legend-label {
     float: left;
-    padding-top: 3px;
-    margin-left: 8px;
+    padding-top: 0.3vh;
+    margin-left: 0.8vh;
 }
 
 #swimmability-chart .day {
@@ -1201,11 +1201,11 @@ a {
 
 .swimmability-tooltip {
     line-height: 1;
-    padding: 12px;
+    padding: 1.2vh;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
-    border-radius: 2px;
-    font-size: 12px;
+    border-radius: 0.2vh;
+    font-size: 1.2vh;
 }
 
 /*******************************/
@@ -1273,7 +1273,7 @@ text.label {
 /*******************************/
 
 #phosphorus-chart {
-    height: 100%;
+    height: 70vh;
     width: 100%;
 }
 
@@ -1322,7 +1322,7 @@ text.label {
 }
 
 #chlorophyll-chart {
-    height: 100%;
+    height: 70vh;
     width: 100%;
     display: none;
 }

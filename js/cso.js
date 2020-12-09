@@ -139,9 +139,9 @@ class CSO {
            // .on("click", function(e, d) { showEdition(d); });
 
         vis.svg.append("rect")
-            .attr("width", 15)
-            .attr("height", 40)
-            .attr("y", 50)
+            .attr("width", 15*svgTransitions.master_scale_width)
+            .attr("height", 40**svgTransitions.master_scale_height)
+            .attr("y", 50*svgTransitions.master_scale_height)
             .attr("x", vis.width*6/7)
             .attr("fill", "url(#rect-gradient");
 
@@ -149,8 +149,8 @@ class CSO {
         vis.svg.append("linearGradient")
             .attr("id", "rect-gradient")
             .attr("gradientUnits", "userSpaceOnUse")
-            .attr("x1", 0).attr("y1", 100)
-            .attr("x2", 0).attr("y2", 50)
+            .attr("x1", 0).attr("y1", 100*svgTransitions.master_scale_height)
+            .attr("x2", 0).attr("y2", 50*svgTransitions.master_scale_height)
             .selectAll("stop")
             .data([
                 {offset: "0%", color: "#2db8e5"},
@@ -163,21 +163,21 @@ class CSO {
 
         vis.svg.append("text")
             .attr("class", "cso-legend")
-            .attr("y", 60)
-            .attr("x", vis.width*6/7+20)
+            .attr("y", 60*svgTransitions.master_scale_height)
+            .attr("x", vis.width*6/7+20*svgTransitions.master_scale_width)
             .attr("text-anchor", "right")
             .text("High CSO");
 
         vis.svg.append("text")
             .attr("class", "cso-legend")
-            .attr("y", 90)
-            .attr("x", vis.width*6/7+20)
+            .attr("y", 80*svgTransitions.master_scale_height)
+            .attr("x", vis.width*6/7+20*svgTransitions.master_scale_width)
             .attr("text-anchor", "right")
             .text("Low CSO");
 
         vis.svg.append("text")
             .attr("class", "cfo-y-label")
-            .attr("y", 10)
+            .attr("y", 10*svgTransitions.master_scale_height)
             .attr("x", (vis.height / 2) * -1)
             .attr("text-anchor", "middle")
             //.attr("dy", "0.75em")
@@ -188,14 +188,14 @@ class CSO {
         vis.svg.append("text")
             .attr("class", "cfo-x-label")
             .attr("x", vis.width/2)
-            .attr("y", vis.height-50)
+            .attr("y", vis.height-50**svgTransitions.master_scale_height)
             .text("Year");
 
 
         vis.svg.append("text")
             .attr("transform",
                 "translate(" + (vis.width/2) + " ," +
-                (vis.height + vis.margin.top + 20) + ")")
+                (vis.height + vis.margin.top + 20**svgTransitions.master_scale_height) + ")")
             .style("text-anchor", "middle")
 
 
@@ -213,23 +213,23 @@ class CSO {
 
         let text = tooltip.append("text")
             .attr("class", "tooltip-text")
-            .attr("y", vis.padding + 20)
+            .attr("y", vis.padding + 20*svgTransitions.master_scale_height)
             .style("fill", "black");
 
 
         let text1 = tooltip.append("text")
             .attr("class", "tooltip-text1")
-            .attr("y", vis.padding + 50)
+            .attr("y", vis.padding + 50*svgTransitions.master_scale_height)
             .style("fill", "#393838");
 
         let text2 = tooltip.append("text")
             .attr("class", "tooltip-text2")
-            .attr("y", vis.padding + 70)
+            .attr("y", vis.padding + 70*svgTransitions.master_scale_height)
             .style("fill", "#393838");
 
         let text3 = tooltip.append("text")
             .attr("class", "tooltip-text2")
-            .attr("y", vis.padding + 90)
+            .attr("y", vis.padding + 90*svgTransitions.master_scale_height)
             .style("fill", "#393838");
 
         let overlay = vis.svg.append("rect")
@@ -278,16 +278,16 @@ class CSO {
         vis.svg.append("text")
             .attr("class", "cfo-x-label")
             .attr("x", vis.width*1/3)
-            .attr("y", 70)
-            .style("font-size", "20px")
+            .attr("y", 70*svgTransitions.master_scale_height)
+            .style("font-size", "2vh")
             .text("Annual sewage overflow (CSO) over time");
 
         vis.svg.append("rect")
             .attr("id", "cso-hover-container")
-            .attr("width", 110)
-            .attr("height", 50)
-            .attr("x", vis.width/2-24)
-            .attr("y", 220)
+            .attr("width", 110*svgTransitions.master_scale_width)
+            .attr("height", 50*svgTransitions.master_scale_height)
+            .attr("x", vis.width/2-24*svgTransitions.master_scale_width)
+            .attr("y", 220*svgTransitions.master_scale_height)
             .attr("fill", "lightgrey")
 
 
@@ -295,9 +295,9 @@ class CSO {
         vis.svg.append("text")
             .attr("id", "cso-hover-label")
             .attr("class", "cfo-x-label")
-            .attr("x", vis.width/2-15)
-            .attr("y", 250)
-            .style("font-size", "14px")
+            .attr("x", vis.width/2-15*svgTransitions.master_scale_width)
+            .attr("y", 250*svgTransitions.master_scale_height)
+            .style("font-size", "1.4vh")
             .text("Hover over me");
 
 

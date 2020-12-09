@@ -178,10 +178,11 @@ class Chlorophyll{
             .attr("x", vis.width/2)
             .attr("y", 50)
             .attr("text-anchor", "middle")
-            .style("font-size", "18px")
+            .style("font-size", "1.8vh")
             .style('font-color', 'black')
             .style("text-decoration", "bold")
             .text("Chlorophyll Levels over Summer");
+
 
         /*vis.svg.append("text")
             .attr("x", vis.width - 80)
