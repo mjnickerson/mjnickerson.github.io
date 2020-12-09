@@ -267,6 +267,8 @@ class titleCardTwoGraphics {
                 .attr("transform", "translate("+vis.width*2+",0)");
         }, 2500);
 
+        svgTransitions.hideBalloonFish()
+
         vis.updateVis();
 
 
